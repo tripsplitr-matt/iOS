@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C354229D925A00BA99B5 /* AppDelegate.swift */; };
-		4431C357229D925A00BA99B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C356229D925A00BA99B5 /* ViewController.swift */; };
 		4431C35A229D925A00BA99B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4431C358229D925A00BA99B5 /* Main.storyboard */; };
 		4431C35C229D925A00BA99B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4431C35B229D925A00BA99B5 /* Assets.xcassets */; };
 		4431C35F229D925A00BA99B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4431C35D229D925A00BA99B5 /* LaunchScreen.storyboard */; };
+		4431C367229D951E00BA99B5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C366229D951E00BA99B5 /* Trip.swift */; };
+		4431C369229D961900BA99B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C368229D961900BA99B5 /* User.swift */; };
+		4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C36B229D97BD00BA99B5 /* TripController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4431C351229D925A00BA99B5 /* Trip Splitr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Splitr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4431C354229D925A00BA99B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4431C356229D925A00BA99B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4431C359229D925A00BA99B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4431C35B229D925A00BA99B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4431C35E229D925A00BA99B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4431C360229D925A00BA99B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4431C366229D951E00BA99B5 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		4431C368229D961900BA99B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4431C36B229D97BD00BA99B5 /* TripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				4431C354229D925A00BA99B5 /* AppDelegate.swift */,
-				4431C356229D925A00BA99B5 /* ViewController.swift */,
+				4431C36B229D97BD00BA99B5 /* TripController.swift */,
 				4431C358229D925A00BA99B5 /* Main.storyboard */,
+				4431C36A229D979800BA99B5 /* Models */,
 				4431C35B229D925A00BA99B5 /* Assets.xcassets */,
 				4431C35D229D925A00BA99B5 /* LaunchScreen.storyboard */,
 				4431C360229D925A00BA99B5 /* Info.plist */,
 			);
 			path = "Trip Splitr";
+			sourceTree = "<group>";
+		};
+		4431C36A229D979800BA99B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4431C366229D951E00BA99B5 /* Trip.swift */,
+				4431C368229D961900BA99B5 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4431C357229D925A00BA99B5 /* ViewController.swift in Sources */,
+				4431C367229D951E00BA99B5 /* Trip.swift in Sources */,
 				4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */,
+				4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */,
+				4431C369229D961900BA99B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
