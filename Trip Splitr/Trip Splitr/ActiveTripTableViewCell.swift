@@ -22,6 +22,7 @@ class ActiveTripTableViewCell: UITableViewCell {
     }
 
 
+    @IBOutlet weak var tripImage: UIImageView!
 
     
 }
