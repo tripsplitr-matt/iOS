@@ -10,7 +10,8 @@ import Foundation
 
 class TripController {
 
-    var allTrips: [Trip] = []
+    var allTrips: [Trip] = [Trip(id: 1, name: "Bora", date: "Date", users: [User(id: 2, name: "Ryan", userName: "TfMuasdf", password: "YourMom", avatar: "balls")], cost: 5000, creatorID: 2, past: false), Trip(id: 3, name: "Tom", date: "Date", users: [User(id: 4, name: "Mike", userName: "Ding", password: "AlsoYourMom", avatar: "aaa"),User(id: 11, name: "Jon", userName: "asd", password: "asdfas", avatar: "asdf")], cost: 10000, creatorID: 6, past: true), Trip(id: 20, name: "Steve", date: "Date", users: [User(id: 56, name: "Imma", userName: "Getting", password: "Drunk", avatar: "Tonight")], cost: 70000, creatorID: 45, past: false)]
+
     var activeTrips: [Trip] {
         var trips: [Trip] = []
         for trip in allTrips {

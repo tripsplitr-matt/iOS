@@ -153,6 +153,8 @@
                                             <constraints>
                                                 <constraint firstItem="s0U-ES-aeq" firstAttribute="top" secondItem="MRx-qX-tbm" secondAttribute="top" constant="28" id="1MF-dC-yiY"/>
                                                 <constraint firstItem="s0U-ES-aeq" firstAttribute="leading" secondItem="MRx-qX-tbm" secondAttribute="leading" constant="116" id="5Q8-q9-q3h"/>
+                                                <constraint firstAttribute="trailing" secondItem="s0U-ES-aeq" secondAttribute="trailing" constant="38.5" id="Ywp-mJ-U0Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="kn5-UY-8oo" secondAttribute="bottom" constant="50" id="aaJ-w7-lA1"/>
                                                 <constraint firstItem="s0U-ES-aeq" firstAttribute="leading" secondItem="kn5-UY-8oo" secondAttribute="trailing" constant="18" id="hq1-lR-zqt"/>
                                                 <constraint firstItem="kn5-UY-8oo" firstAttribute="leading" secondItem="MRx-qX-tbm" secondAttribute="leading" constant="8" id="kPk-I4-L2i"/>
                                                 <constraint firstItem="kn5-UY-8oo" firstAttribute="top" secondItem="MRx-qX-tbm" secondAttribute="top" constant="11" id="qwV-vY-s2j"/>
@@ -162,13 +164,14 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="MRx-qX-tbm" secondAttribute="trailing" constant="20" id="8OW-lY-Bk2"/>
                                         <constraint firstItem="MRx-qX-tbm" firstAttribute="top" secondItem="qWG-bD-9rv" secondAttribute="topMargin" constant="16" id="9DD-Be-lUd"/>
+                                        <constraint firstAttribute="bottom" secondItem="s0U-ES-aeq" secondAttribute="bottom" constant="100.5" id="EfI-Eg-Gul"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="MRx-qX-tbm" secondAttribute="bottom" constant="16" id="Kco-8H-B2e"/>
                                         <constraint firstItem="MRx-qX-tbm" firstAttribute="leading" secondItem="qWG-bD-9rv" secondAttribute="leadingMargin" constant="20" id="Kkj-Mh-mey"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="Dwh-Vf-nqU" id="hHf-rw-KWm"/>
-                                    <outlet property="tripImageView" destination="MRx-qX-tbm" id="peR-Ja-vkk"/>
+                                    <outlet property="tripImageView" destination="kn5-UY-8oo" id="oFD-j6-eJf"/>
                                     <outlet property="tripNameLabel" destination="vOM-xl-e74" id="6G8-0V-b2E"/>
                                 </connections>
                             </tableViewCell>

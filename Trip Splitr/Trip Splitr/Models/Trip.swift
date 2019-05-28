@@ -12,7 +12,7 @@ import Foundation
 struct Trip: Codable, Equatable {
     var id: Int
     var name: String
-    var date: Date
+    var date: String
     var users: [User]
     var cost: Int
     //var image: UIimage

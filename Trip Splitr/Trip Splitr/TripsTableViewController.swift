@@ -18,6 +18,8 @@ class TripsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
@@ -33,20 +35,66 @@ class TripsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let trip = tripController.allTrips[indexPath.row]
-        if trip.past == false {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
-            cell.tripNameLabel.text = trip.name
+        
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
+            let trip = tripController.activeTrips[indexPath.row]
 
-            
-
+            if trip.past == false {
+                cell.tripNameLabel.text = trip.name
+                cell.numberOfPeopleLabel.text = "\(trip.users.count) people"
+                cell.dateLabel.text = trip.date
+                cell.costLabel.text = "\(trip.cost)"
+            }
             return cell
         } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
+            let trip = tripController.pastTrips[indexPath.row]
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PastCell", for: indexPath) as! PastTripTableViewCell
+            if trip.past == true {
+                cell.dateLabel.text = trip.date
+                cell.tripNameLabel.text = trip.name
+            }
             return cell
+
+        }
+        
+
+        
+//        if trip.past == false {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
+//                cell.tripNameLabel.text = trip.name
+//                cell.numberOfPeopleLabel.text = "\(trip.users.count) people"
+//                cell.dateLabel.text = trip.date
+//                cell.costLabel.text = "\(trip.cost)"
+//                return cell
+//        } else {
+//
+//            let cell1 = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
+//                cell1.dateLabel.text = trip.date
+//                cell1.tripNameLabel.text = trip.name
+//
+//
+//                return cell1
+//        }
+
+    }
+
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+        if self.tableView(tableView, numberOfRowsInSection: section) > 0 {
+            switch section {
+            case 0:
+                return "Active Trips"
+            case 1:
+                return "Past Trips"
+            default:
+                return nil
+            }
         }
 
+        return nil
     }
 
 
