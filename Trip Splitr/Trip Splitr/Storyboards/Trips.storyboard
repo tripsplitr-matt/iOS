@@ -13,7 +13,7 @@
         <!--Trips-->
         <scene sceneID="eqI-ln-2Zh">
             <objects>
-                <tableViewController id="w8N-rL-LzH" sceneMemberID="viewController">
+                <tableViewController id="w8N-rL-LzH" customClass="TripsTableViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hi9-at-lsJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                         <sections>
                             <tableViewSection id="8hT-0W-l44">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="181" id="oRg-j3-vEu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActiveTripCell" rowHeight="181" id="oRg-j3-vEu" customClass="ActiveTripTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oRg-j3-vEu" id="YyE-F0-rx1">
@@ -110,7 +110,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Past Trips" id="SOf-hp-Hqo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="205" id="miL-qC-Bh9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastTripCell" rowHeight="205" id="miL-qC-Bh9">
                                         <rect key="frame" x="0.0" y="209" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="miL-qC-Bh9" id="fbk-2x-rTe">
