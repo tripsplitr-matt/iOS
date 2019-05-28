@@ -77,7 +77,6 @@
                             <outlet property="delegate" destination="jlL-ih-LnM" id="SbH-W0-vet"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="People" id="ozh-gE-HaX"/>
                     <navigationItem key="navigationItem" title="People " id="3fT-Ha-afx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yJX-49-bpI">
                             <connections>
@@ -91,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="733.33333333333337" y="18.75"/>
         </scene>
-        <!--Title-->
+        <!--Add Name-->
         <scene sceneID="1bl-kR-XNH">
             <objects>
                 <viewController id="xPe-oD-Kpu" sceneMemberID="viewController">
@@ -100,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9A-yI-zhN">
-                                <rect key="frame" x="20" y="175" width="374" height="64"/>
+                                <rect key="frame" x="20" y="123" width="374" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A9A-yI-zhN" secondAttribute="height" multiplier="187:32" id="iqA-9g-Pag"/>
                                 </constraints>
@@ -118,10 +117,10 @@
                         <viewLayoutGuide key="safeArea" id="5rY-Gs-ypo"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="8gd-0J-L2z">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8L5-fl-LPw">
+                    <navigationItem key="navigationItem" title="Add Name" id="HSY-hf-b7H">
+                        <barButtonItem key="rightBarButtonItem" title="Add Photo" id="usY-Rj-a91">
                             <connections>
-                                <segue destination="FTg-bW-Utc" kind="show" id="JHM-ui-uQF"/>
+                                <segue destination="FTg-bW-Utc" kind="show" id="r9c-EK-OYV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,13 +139,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-gc-Fgz">
-                                <rect key="frame" x="95" y="293" width="224" height="224"/>
+                                <rect key="frame" x="95" y="241" width="224" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xpk-gc-Fgz" secondAttribute="height" multiplier="1:1" id="ACz-uM-MXB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-gn-3cQ">
-                                <rect key="frame" x="95" y="198" width="45" height="21"/>
+                                <rect key="frame" x="95" y="146" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -168,13 +167,15 @@
             </objects>
             <point key="canvasLocation" x="2221.739130434783" y="20.758928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--People-->
         <scene sceneID="xvN-ql-QjP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ng1-JP-wUg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="People" id="pq2-rT-IiJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AKK-Nq-Odh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AKK-Nq-Odh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
