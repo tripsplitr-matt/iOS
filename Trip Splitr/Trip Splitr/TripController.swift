@@ -11,25 +11,23 @@ import Foundation
 class TripController {
 
     var allTrips: [Trip] = []
-    var activeTrips: [Trip] = []
-    var pastTrips: [Trip] = []
-
-    func sortTrips() {
-
+    var activeTrips: [Trip] {
+        var trips: [Trip] = []
         for trip in allTrips {
-            if trip.past == true {
-                pastTrips.append(trip)
-            } else {
-                activeTrips.append(trip)
+            if trip.past == false {
+                trips.append(trip)
             }
         }
+        return trips
     }
-
-    init() {
-        sortTrips()
+    var pastTrips: [Trip] {
+        var trips: [Trip] = []
+        for trip in allTrips {
+            if trip.past == true {
+                trips.append(trip)
+            }
+        }
+        return trips
     }
-
-
-
 
 }

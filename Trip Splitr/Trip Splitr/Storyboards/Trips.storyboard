@@ -72,10 +72,14 @@
                                                     </constraints>
                                                     <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="✕  END TRIP"/>
+                                                    <connections>
+                                                        <action selector="endTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="U5r-57-BfB"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-zQ-6dp">
                                                     <rect key="frame" x="300" y="3" width="22" height="22"/>
                                                     <connections>
+                                                        <action selector="editTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="v8O-14-XQU"/>
                                                         <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="n9s-wV-of3"/>
                                                     </connections>
                                                 </button>
@@ -104,10 +108,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="tripImage" destination="PK5-vd-pbx" id="xLz-H8-uf1"/>
+                                    <outlet property="costLabel" destination="tdn-t2-324" id="qAb-qK-ahd"/>
+                                    <outlet property="dateLabel" destination="kxr-fH-xIQ" id="0nJ-cd-Zie"/>
+                                    <outlet property="numberOfPeopleLabel" destination="xtV-0c-hke" id="ZcI-EC-KbP"/>
+                                    <outlet property="tripImageView" destination="PK5-vd-pbx" id="xLz-H8-uf1"/>
+                                    <outlet property="tripNameLabel" destination="D3g-I0-r5A" id="xS5-vy-SOS"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastTripCell" rowHeight="205" id="1mr-DB-AGV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastTripCell" rowHeight="205" id="1mr-DB-AGV" customClass="PastTripTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="209" width="414" height="205"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mr-DB-AGV" id="qWG-bD-9rv">
@@ -158,6 +166,11 @@
                                         <constraint firstItem="MRx-qX-tbm" firstAttribute="leading" secondItem="qWG-bD-9rv" secondAttribute="leadingMargin" constant="20" id="Kkj-Mh-mey"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Dwh-Vf-nqU" id="hHf-rw-KWm"/>
+                                    <outlet property="tripImageView" destination="MRx-qX-tbm" id="peR-Ja-vkk"/>
+                                    <outlet property="tripNameLabel" destination="vOM-xl-e74" id="6G8-0V-b2E"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>

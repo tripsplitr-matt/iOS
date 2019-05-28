@@ -33,12 +33,20 @@ class TripsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        let trip = tripController.allTrips[indexPath.row]
+        if trip.past == false {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
-       
+            cell.tripNameLabel.text = trip.name
 
+            
 
-        return cell
+            return cell
+        } else {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PastCell", for: indexPath) as! PastTripTableViewCell
+            return cell
+        }
+
     }
 
 
