@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w8N-rL-LzH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LKF-vb-r7N">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection headerTitle="Trips" id="8hT-0W-l44">
+                            <tableViewSection id="8hT-0W-l44">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="181" id="oRg-j3-vEu">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="181"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oRg-j3-vEu" id="YyE-F0-rx1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="180.5"/>
@@ -76,6 +77,9 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-zQ-6dp">
                                                             <rect key="frame" x="300" y="3" width="22" height="22"/>
+                                                            <connections>
+                                                                <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="n9s-wV-of3"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +111,7 @@
                             <tableViewSection headerTitle="Past Trips" id="SOf-hp-Hqo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="205" id="miL-qC-Bh9">
-                                        <rect key="frame" x="0.0" y="237" width="414" height="205"/>
+                                        <rect key="frame" x="0.0" y="209" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="miL-qC-Bh9" id="fbk-2x-rTe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
@@ -166,12 +170,71 @@
                             <outlet property="delegate" destination="w8N-rL-LzH" id="OiA-bV-thG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Trips" id="eyz-gz-uD3"/>
+                    <navigationItem key="navigationItem" title="Trips" id="PA4-ZX-wZE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oSS-uJ-C5N">
+                            <connections>
+                                <segue destination="zzq-T5-pfl" kind="presentation" identifier="AddTrip" id="Qiy-Nc-wrQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLj-nu-lLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.579710144927539" y="166.74107142857142"/>
+            <point key="canvasLocation" x="952.17391304347836" y="184.82142857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EN6-uM-pqr">
+            <objects>
+                <viewController id="zzq-T5-pfl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xH8-zj-bde">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Clt-09-xYy">
+                                <rect key="frame" x="0.0" y="342" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="580756092.06882405">
+                                    <!--2019-05-28 17:08:12 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlP-z8-Zu2">
+                                <rect key="frame" x="63" y="298" width="289" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LY1-kN-ZSM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52x-KX-RtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="185"/>
+        </scene>
+        <!--Trips-->
+        <scene sceneID="UgS-om-SgY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LKF-vb-r7N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trips" id="eyz-gz-uD3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oFc-qB-a1e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w8N-rL-LzH" kind="relationship" relationship="rootViewController" id="JSK-wq-h4z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="as3-PU-e5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="184.82142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qiy-Nc-wrQ"/>
+    </inferredMetricsTieBreakers>
 </document>
