@@ -21,8 +21,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
-
+    private func updateViews() {
+        view.backgroundColor = AppearanceHelper.lightBlue
+        usernameTextField.backgroundColor = AppearanceHelper.lightGray
+        passwordTextField.backgroundColor = AppearanceHelper.lightGray
+        loginTypeSegmentedControl.tintColor = AppearanceHelper.darkBlue
+        signInButton.tintColor = .white
+        loginTypeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        loginTypeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+    }
+    
     @IBAction func signInTypeChanged(_ sender: Any) {
         if loginTypeSegmentedControl.selectedSegmentIndex == 0 {
             signInType = .signUp
@@ -80,4 +90,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case signUp
         case logIn
     }
+    
+    
+    
+ 
+    
+    
+    
 }
