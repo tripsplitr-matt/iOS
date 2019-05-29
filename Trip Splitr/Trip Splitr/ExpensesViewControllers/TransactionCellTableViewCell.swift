@@ -21,4 +21,7 @@ class TransactionCellTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var transactionNameLabel: UILabel!
+    @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 }

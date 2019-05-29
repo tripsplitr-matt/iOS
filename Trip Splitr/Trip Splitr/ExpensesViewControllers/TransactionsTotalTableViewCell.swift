@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionsTotalTableViewCell: UITableViewCell {
 
+    @IBAction func endTripButtonPressed(_ sender: Any) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,6 @@ class TransactionsTotalTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var tripTotalLabel: UILabel!
+    
 }
