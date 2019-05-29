@@ -16,6 +16,14 @@ class TripsTableViewController: UITableViewController {
 
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        tableView.reloadData()
+        
+    }
+    
     // MARK: - Table view data source
 
     
@@ -42,7 +50,7 @@ class TripsTableViewController: UITableViewController {
 
             if trip.past == false {
                 cell.tripNameLabel.text = trip.name
-                cell.numberOfPeopleLabel.text = "\(trip.users.count) people"
+                cell.numberOfPeopleLabel.text = "\(trip.users!.count) people"
                 cell.dateLabel.text = trip.date
                 cell.costLabel.text = "\(trip.cost)"
             }
@@ -104,8 +112,16 @@ class TripsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddTrip" {
+            
+            let destinationVC = segue.destination as? TripDetailViewController
+        
+            destinationVC?.tripController = tripController
+        
+        
+        }
+        
+
     }
 
 

@@ -13,12 +13,11 @@ struct Trip: Codable, Equatable {
     var id: Int
     var name: String
     var date: String
-    var users: [User]
-    var cost: Int
-    //var image: UIimage
+    var users: [User]?
+    var cost: Int?
+//    var image: String
     var creatorID: Int
     var past: Bool
-    
-    
+ 
     
 }

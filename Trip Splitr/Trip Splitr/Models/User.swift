@@ -15,8 +15,8 @@ struct User: Codable, Equatable {
     var name: String
     var userName: String
     var password: String
-    // var spent: Int
-    // var recieved: Int
+//     var spent: Int?
+//     var recieved: Int?
     var avatar: String
     
 }
