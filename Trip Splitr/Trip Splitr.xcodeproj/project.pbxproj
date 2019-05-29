@@ -15,6 +15,10 @@
 		4431C367229D951E00BA99B5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C366229D951E00BA99B5 /* Trip.swift */; };
 		4431C369229D961900BA99B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C368229D961900BA99B5 /* User.swift */; };
 		4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C36B229D97BD00BA99B5 /* TripController.swift */; };
+		44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */; };
+		44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */; };
+		44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */; };
+		44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */; };
 		D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */; };
 		D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */; };
 		D16E58A8229D9959005ED951 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A7229D9959005ED951 /* Trips.storyboard */; };
@@ -35,6 +39,10 @@
 		4431C366229D951E00BA99B5 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4431C368229D961900BA99B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4431C36B229D97BD00BA99B5 /* TripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripController.swift; sourceTree = "<group>"; };
+		44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseCostViewController.swift; path = ../TripExpenseCostViewController.swift; sourceTree = "<group>"; };
+		44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpensePaidByViewController.swift; path = ../TripExpensePaidByViewController.swift; sourceTree = "<group>"; };
+		44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseUsedByViewController.swift; path = ../TripExpenseUsedByViewController.swift; sourceTree = "<group>"; };
+		44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripExpenseEventViewController.swift; sourceTree = "<group>"; };
 		D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripTableViewCell.swift; sourceTree = "<group>"; };
 		D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		D16E58A7229D9959005ED951 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 				4431C354229D925A00BA99B5 /* AppDelegate.swift */,
 				440E8F11229E1D5900114ACE /* AppearanceHelper.swift */,
 				4431C36B229D97BD00BA99B5 /* TripController.swift */,
+				44DF75E3229EEC4900AC0FBC /* New Group */,
 				D131F4FC229DEC1A00C58357 /* TripViewControllers */,
 				D16E58AE229D99A1005ED951 /* Storyboards */,
 				4431C36A229D979800BA99B5 /* Models */,
@@ -94,6 +103,17 @@
 				4431C368229D961900BA99B5 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		44DF75E3229EEC4900AC0FBC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */,
+				44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */,
+				44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */,
+				44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D131F4FC229DEC1A00C58357 /* TripViewControllers */ = {
@@ -195,9 +215,13 @@
 				4431C367229D951E00BA99B5 /* Trip.swift in Sources */,
 				4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */,
 				440E8F12229E1D5900114ACE /* AppearanceHelper.swift in Sources */,
+				44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
+				44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */,
+				44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,
+				44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */,
 				D16E58B2229DCD7E005ED951 /* TripsTableViewController.swift in Sources */,
 				4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */,
 				4431C369229D961900BA99B5 /* User.swift in Sources */,

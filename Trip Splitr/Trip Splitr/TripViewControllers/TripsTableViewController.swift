@@ -74,13 +74,6 @@ class TripsTableViewController: UITableViewController {
     private func style(cell: UITableViewCell) {
 //        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
 
-        
-        cell.textLabel?.backgroundColor = .clear
-
-        
-        cell.textLabel?.textColor = AppearanceHelper.white
-
-        
         cell.backgroundColor = AppearanceHelper.lightBlue
     }
     

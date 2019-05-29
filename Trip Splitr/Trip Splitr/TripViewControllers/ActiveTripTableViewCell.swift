@@ -19,7 +19,7 @@ class ActiveTripTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-      
+      setupView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,10 +32,13 @@ class ActiveTripTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var endTripButton: UIButton!
     var tripController: TripController?
 
     func setupView() {
-       
+//    endTripButton.backgroundColor = AppearanceHelper.mediumBlue
+//    endTripButton.tintColor = AppearanceHelper.darkBlue
+//   
         
         
         
