@@ -93,7 +93,7 @@
 				4431C36B229D97BD00BA99B5 /* TripController.swift */,
 				D101FFB1229EF57A00D3A5A8 /* APIController.swift */,
 				D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */,
-				44DF75E3229EEC4900AC0FBC /* New Group */,
+				44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */,
 				D131F4FC229DEC1A00C58357 /* TripViewControllers */,
 				D16E58AE229D99A1005ED951 /* Storyboards */,
 				4431C36A229D979800BA99B5 /* Models */,
@@ -114,7 +114,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		44DF75E3229EEC4900AC0FBC /* New Group */ = {
+		44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */,
@@ -122,7 +122,7 @@
 				44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */,
 				44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */,
 			);
-			path = "New Group";
+			path = ExpensesViewControllers;
 			sourceTree = "<group>";
 		};
 		D131F4FC229DEC1A00C58357 /* TripViewControllers */ = {
