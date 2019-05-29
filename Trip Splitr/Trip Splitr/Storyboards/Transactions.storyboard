@@ -48,13 +48,20 @@
         <!--Event-->
         <scene sceneID="VlI-Oi-BQW">
             <objects>
-                <viewController id="dX4-Kc-lmJ" sceneMemberID="viewController">
+                <viewController id="dX4-Kc-lmJ" customClass="TripExpenseEventViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iX1-Fk-rKm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-hi-Dgd">
-                                <rect key="frame" x="20" y="235" width="97" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Trip Event: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7P-rG-knl">
+                                <rect key="frame" x="20" y="185" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg: Pizza, Uber Ride, Excursion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-hi-Dgd">
+                                <rect key="frame" x="20" y="268" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -73,26 +80,23 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="enterTripEventLabel" destination="e7P-rG-knl" id="cwc-ei-V5L"/>
+                        <outlet property="tripEventTextField" destination="Hoc-hi-Dgd" id="01X-fc-qLW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCe-nv-gcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="143"/>
+            <point key="canvasLocation" x="802.89855072463774" y="142.63392857142856"/>
         </scene>
         <!--Cost-->
         <scene sceneID="xGD-Hd-q2D">
             <objects>
-                <viewController id="fKn-fJ-hRj" sceneMemberID="viewController">
+                <viewController id="fKn-fJ-hRj" customClass="TripExpenseCostViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GmT-CQ-4gH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-za-N8a">
-                                <rect key="frame" x="20" y="237" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-ej-5pn">
                                 <rect key="frame" x="20" y="178" width="43" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -100,26 +104,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Event Cost:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-jr-kIz">
+                                <rect key="frame" x="21" y="223" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Total In Dollars and Cents" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-za-N8a">
+                                <rect key="frame" x="20" y="268" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qN-XL-iQa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cost" id="Nhp-Nq-DZJ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="bVc-lW-Kso">
+                        <barButtonItem key="rightBarButtonItem" title="Paid By" id="bVc-lW-Kso">
                             <connections>
                                 <segue destination="ygb-zz-9Ky" kind="show" id="Wpk-xV-LRB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="enterCostLabel" destination="eqU-jr-kIz" id="3PG-Z5-4Cd"/>
+                        <outlet property="eventLabel" destination="v5Z-ej-5pn" id="YVW-TB-z1x"/>
+                        <outlet property="tripCostTextField" destination="dk7-za-N8a" id="bCg-He-TTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnM-S1-NUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523.1884057971015" y="145.98214285714286"/>
+            <point key="canvasLocation" x="1521.7391304347827" y="142.63392857142856"/>
         </scene>
         <!--Paid By-->
         <scene sceneID="wfn-hb-MfF">
             <objects>
-                <viewController id="ygb-zz-9Ky" sceneMemberID="viewController">
+                <viewController id="ygb-zz-9Ky" customClass="TripExpensePaidByViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Y5-KO-BFJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,21 +169,21 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4k-1Q-4Wr">
-                                <rect key="frame" x="20" y="143" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-xI-HwZ">
-                                <rect key="frame" x="20" y="172" width="36" height="21"/>
+                                <rect key="frame" x="20" y="169" width="43" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paid By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-yi-jjM">
-                                <rect key="frame" x="20" y="201" width="67" height="21"/>
+                                <rect key="frame" x="20" y="239" width="67" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-xI-HwZ">
+                                <rect key="frame" x="20" y="210" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -171,12 +194,18 @@
                         <viewLayoutGuide key="safeArea" id="hES-sz-s7o"/>
                     </view>
                     <navigationItem key="navigationItem" title="Paid By" id="x4m-cL-Ml1">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="QWt-SF-njy">
+                        <barButtonItem key="rightBarButtonItem" title="Used By" id="QWt-SF-njy">
                             <connections>
                                 <segue destination="XjO-LL-E87" kind="show" id="P92-ze-qcE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="costLabel" destination="dW2-xI-HwZ" id="nal-Vb-Y16"/>
+                        <outlet property="eventLabel" destination="q4k-1Q-4Wr" id="8hH-xx-a7C"/>
+                        <outlet property="eventPaidByLabel" destination="JLZ-yi-jjM" id="6Du-E9-wQH"/>
+                        <outlet property="paidByCollectionView" destination="2GX-oG-WsQ" id="6wh-ns-ZlZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ2-DV-B1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +234,7 @@
         <!--Used By-->
         <scene sceneID="F8Z-zS-ara">
             <objects>
-                <viewController id="XjO-LL-E87" sceneMemberID="viewController">
+                <viewController id="XjO-LL-E87" customClass="TripExpenseUsedByViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNz-y5-5j9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +295,13 @@
                     <navigationItem key="navigationItem" title="Used By" id="2eM-ut-dOQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LKh-vd-Nt7"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="costLabel" destination="dzH-Mc-UdT" id="aeX-yr-CiV"/>
+                        <outlet property="eventLabel" destination="fa6-Qq-nVe" id="isD-dS-zcT"/>
+                        <outlet property="paidByLabel" destination="eSo-lh-ASy" id="4v0-65-Wyg"/>
+                        <outlet property="tripUsedByCollectionView" destination="5bq-De-JDi" id="Eec-am-Msf"/>
+                        <outlet property="tripUsedByLabel" destination="S2y-QX-tYW" id="LYb-yn-BF5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxM-Ix-smi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

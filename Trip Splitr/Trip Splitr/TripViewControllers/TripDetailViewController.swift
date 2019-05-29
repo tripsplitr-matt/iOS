@@ -12,7 +12,7 @@ class TripDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +21,13 @@ class TripDetailViewController: UIViewController {
         updateTrip()
     }
 
+    private func updateViews() {
+        view.backgroundColor = AppearanceHelper.lightBlue
+        tripNameTextField.backgroundColor = AppearanceHelper.lightGray
+        tripImageTextField.backgroundColor = AppearanceHelper.lightGray
+    }
+    
+    
     func updateTrip() {
         guard let trip = trip else { return }
         tripNameTextField.text = trip.name

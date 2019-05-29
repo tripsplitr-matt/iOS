@@ -77,7 +77,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="centerX" secondItem="Xwh-SX-yYo" secondAttribute="centerX" id="3RJ-On-XeW"/>
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="leading" secondItem="PK5-vd-pbx" secondAttribute="leading" id="FbY-3j-WAb"/>
@@ -101,6 +101,7 @@
                                 <connections>
                                     <outlet property="costLabel" destination="tdn-t2-324" id="qAb-qK-ahd"/>
                                     <outlet property="dateLabel" destination="kxr-fH-xIQ" id="0nJ-cd-Zie"/>
+                                    <outlet property="endTripButton" destination="lge-AG-nFt" id="U03-qN-58g"/>
                                     <outlet property="numberOfPeopleLabel" destination="xtV-0c-hke" id="ZcI-EC-KbP"/>
                                     <outlet property="tripImageView" destination="PK5-vd-pbx" id="xLz-H8-uf1"/>
                                     <outlet property="tripNameLabel" destination="D3g-I0-r5A" id="xS5-vy-SOS"/>
@@ -141,7 +142,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="s0U-ES-aeq" firstAttribute="top" secondItem="MRx-qX-tbm" secondAttribute="top" constant="28" id="1MF-dC-yiY"/>
                                                 <constraint firstItem="s0U-ES-aeq" firstAttribute="leading" secondItem="MRx-qX-tbm" secondAttribute="leading" constant="116" id="5Q8-q9-q3h"/>
@@ -182,6 +183,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="iOq-g0-XwR" kind="presentation" identifier="LoginViewModalSegue" id="RsL-nM-jF2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLj-nu-lLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,6 +266,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as3-PU-e5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="40.579710144927539" y="184.82142857142856"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="7sS-gI-0XC">
+            <objects>
+                <viewController id="iOq-g0-XwR" customClass="LoginViewController" customModule="Trip_Splitr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zcq-YO-slJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-JW-u7s">
+                                <rect key="frame" x="40" y="269" width="334" height="177"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-8G-Kp3">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-l5-0gk">
+                                        <rect key="frame" x="0.0" y="43" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrT-Cz-uD2">
+                                        <rect key="frame" x="0.0" y="86" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="85f-Bj-pUf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="authenticate:" destination="iOq-g0-XwR" eventType="touchUpInside" id="qU9-Lo-Xex"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5b6-6g-2Ln">
+                                        <rect key="frame" x="0.0" y="149" width="334" height="29"/>
+                                        <segments>
+                                            <segment title="Sign Up"/>
+                                            <segment title="Sign In"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="signInTypeChanged:" destination="iOq-g0-XwR" eventType="valueChanged" id="T3V-4U-ICT"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rh3-JW-u7s" firstAttribute="leading" secondItem="Gv5-ja-3iA" secondAttribute="leading" constant="40" id="hnZ-Gj-2d8"/>
+                            <constraint firstItem="rh3-JW-u7s" firstAttribute="top" secondItem="Gv5-ja-3iA" secondAttribute="top" constant="225" id="ldd-zN-eih"/>
+                            <constraint firstItem="Gv5-ja-3iA" firstAttribute="trailing" secondItem="rh3-JW-u7s" secondAttribute="trailing" constant="40" id="mOr-vE-7f9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gv5-ja-3iA"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginTypeSegmentedControl" destination="5b6-6g-2Ln" id="vea-De-abh"/>
+                        <outlet property="passwordTextField" destination="ez4-l5-0gk" id="hLy-89-Mnw"/>
+                        <outlet property="signInButton" destination="XrT-Cz-uD2" id="mKN-zc-3Ov"/>
+                        <outlet property="usernameTextField" destination="6NS-8G-Kp3" id="Gog-Gx-Fnn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQ9-hS-nuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="-490"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
