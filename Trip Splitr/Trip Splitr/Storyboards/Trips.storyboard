@@ -76,13 +76,6 @@
                                                         <action selector="endTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="U5r-57-BfB"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-zQ-6dp">
-                                                    <rect key="frame" x="300" y="3" width="22" height="22"/>
-                                                    <connections>
-                                                        <action selector="editTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="v8O-14-XQU"/>
-                                                        <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="jlK-wm-p5Y"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -91,11 +84,9 @@
                                                 <constraint firstItem="PK5-vd-pbx" firstAttribute="top" secondItem="Xwh-SX-yYo" secondAttribute="top" constant="-1" id="TwG-88-KMi"/>
                                                 <constraint firstItem="PK5-vd-pbx" firstAttribute="leading" secondItem="Xwh-SX-yYo" secondAttribute="leading" id="Uxy-5I-mnJ"/>
                                                 <constraint firstItem="Ydf-Vw-rR6" firstAttribute="leading" secondItem="PK5-vd-pbx" secondAttribute="trailing" constant="24" id="ZJh-de-6x9"/>
-                                                <constraint firstItem="Oeh-zQ-6dp" firstAttribute="top" secondItem="Xwh-SX-yYo" secondAttribute="top" constant="3" id="d7t-YJ-nOX"/>
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="top" secondItem="Ydf-Vw-rR6" secondAttribute="bottom" constant="8" symbolic="YES" id="eWn-WC-OLy"/>
                                                 <constraint firstItem="Ydf-Vw-rR6" firstAttribute="top" secondItem="Xwh-SX-yYo" secondAttribute="top" constant="1" id="ewV-4M-F9k"/>
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="top" secondItem="PK5-vd-pbx" secondAttribute="bottom" constant="7" id="fqR-Zd-MEB"/>
-                                                <constraint firstAttribute="trailing" secondItem="Oeh-zQ-6dp" secondAttribute="trailing" constant="12" id="hJJ-gB-aNS"/>
                                                 <constraint firstAttribute="bottom" secondItem="lge-AG-nFt" secondAttribute="bottom" constant="-9" id="wkz-VW-r7i"/>
                                             </constraints>
                                         </view>
@@ -113,6 +104,7 @@
                                     <outlet property="numberOfPeopleLabel" destination="xtV-0c-hke" id="ZcI-EC-KbP"/>
                                     <outlet property="tripImageView" destination="PK5-vd-pbx" id="xLz-H8-uf1"/>
                                     <outlet property="tripNameLabel" destination="D3g-I0-r5A" id="xS5-vy-SOS"/>
+                                    <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="Vl6-0c-iNI"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastTripCell" rowHeight="205" id="1mr-DB-AGV" customClass="PastTripTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
@@ -273,6 +265,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0bQ-X2-8gg"/>
+        <segue reference="Vl6-0c-iNI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -52,7 +52,8 @@ class TripsTableViewController: UITableViewController {
                 cell.tripNameLabel.text = trip.name
                 cell.numberOfPeopleLabel.text = "\(trip.users!.count) people"
                 cell.dateLabel.text = trip.date
-                cell.costLabel.text = "\(trip.cost)"
+                cell.costLabel.text = "\(trip.cost ?? 0)"
+
             }
             return cell
         } else {
@@ -66,25 +67,6 @@ class TripsTableViewController: UITableViewController {
             return cell
 
         }
-        
-
-        
-//        if trip.past == false {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
-//                cell.tripNameLabel.text = trip.name
-//                cell.numberOfPeopleLabel.text = "\(trip.users.count) people"
-//                cell.dateLabel.text = trip.date
-//                cell.costLabel.text = "\(trip.cost)"
-//                return cell
-//        } else {
-//
-//            let cell1 = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
-//                cell1.dateLabel.text = trip.date
-//                cell1.tripNameLabel.text = trip.name
-//
-//
-//                return cell1
-//        }
 
     }
 
@@ -108,17 +90,20 @@ class TripsTableViewController: UITableViewController {
 
 
 
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddTrip" {
-            
             let destinationVC = segue.destination as? TripDetailViewController
-        
             destinationVC?.tripController = tripController
-        
-        
+        } else if segue.identifier == "EditTrip" {
+            let destinationVC = segue.destination as? TripDetailViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            destinationVC?.tripController = tripController
+            destinationVC?.trip = tripController.activeTrips[indexPath.row]
+ 
         }
         
 

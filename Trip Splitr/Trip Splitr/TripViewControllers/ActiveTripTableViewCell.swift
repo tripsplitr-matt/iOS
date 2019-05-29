@@ -13,8 +13,7 @@ class ActiveTripTableViewCell: UITableViewCell {
     @IBAction func endTripButtonPressed(_ sender: Any) {
     }
 
-    @IBAction func editTripButtonPressed(_ sender: Any) {
-    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +25,12 @@ class ActiveTripTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    @IBOutlet weak var tripImageView: UIImageView!
+        @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    var tripController: TripController?
+
     
 }
