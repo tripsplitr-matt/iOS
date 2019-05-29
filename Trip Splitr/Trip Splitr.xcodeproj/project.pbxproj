@@ -15,6 +15,12 @@
 		4431C367229D951E00BA99B5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C366229D951E00BA99B5 /* Trip.swift */; };
 		4431C369229D961900BA99B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C368229D961900BA99B5 /* User.swift */; };
 		4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C36B229D97BD00BA99B5 /* TripController.swift */; };
+		44786688229F1C5100FFA53E /* PeopleAddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786687229F1C5100FFA53E /* PeopleAddNameViewController.swift */; };
+		4478668A229F1C6300FFA53E /* PeopleAddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786689229F1C6300FFA53E /* PeopleAddPhotoViewController.swift */; };
+		4478668E229F1CAB00FFA53E /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4478668D229F1CAB00FFA53E /* PeopleTableViewController.swift */; };
+		44786691229F1FF900FFA53E /* PeopleSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */; };
+		44786693229F263C00FFA53E /* PersonSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */; };
+		44786695229F267E00FFA53E /* PersonExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */; };
 		44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */; };
 		44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */; };
 		44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */; };
@@ -45,6 +51,12 @@
 		4431C366229D951E00BA99B5 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4431C368229D961900BA99B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4431C36B229D97BD00BA99B5 /* TripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripController.swift; sourceTree = "<group>"; };
+		44786687229F1C5100FFA53E /* PeopleAddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAddNameViewController.swift; sourceTree = "<group>"; };
+		44786689229F1C6300FFA53E /* PeopleAddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAddPhotoViewController.swift; sourceTree = "<group>"; };
+		4478668D229F1CAB00FFA53E /* PeopleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
+		44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSummaryTableViewController.swift; sourceTree = "<group>"; };
+		44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseCostViewController.swift; path = ../TripExpenseCostViewController.swift; sourceTree = "<group>"; };
 		44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpensePaidByViewController.swift; path = ../TripExpensePaidByViewController.swift; sourceTree = "<group>"; };
 		44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseUsedByViewController.swift; path = ../TripExpenseUsedByViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +111,7 @@
 				4431C36B229D97BD00BA99B5 /* TripController.swift */,
 				D101FFB1229EF57A00D3A5A8 /* APIController.swift */,
 				D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */,
+				4478668F229F1DD600FFA53E /* PeopleViewControllers */,
 				44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */,
 				D131F4FC229DEC1A00C58357 /* TripViewControllers */,
 				D16E58AE229D99A1005ED951 /* Storyboards */,
@@ -118,6 +131,19 @@
 				D101FFB4229EF5A300D3A5A8 /* Bearer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4478668F229F1DD600FFA53E /* PeopleViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				44786687229F1C5100FFA53E /* PeopleAddNameViewController.swift */,
+				44786689229F1C6300FFA53E /* PeopleAddPhotoViewController.swift */,
+				44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */,
+				4478668D229F1CAB00FFA53E /* PeopleTableViewController.swift */,
+				44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */,
+				44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */,
+			);
+			path = PeopleViewControllers;
 			sourceTree = "<group>";
 		};
 		44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */ = {
@@ -233,21 +259,27 @@
 				D101FFB2229EF57A00D3A5A8 /* LoginViewController.swift in Sources */,
 				D101FFBD229F156600D3A5A8 /* TransactionCellTableViewCell.swift in Sources */,
 				4431C367229D951E00BA99B5 /* Trip.swift in Sources */,
+				44786691229F1FF900FFA53E /* PeopleSummaryTableViewController.swift in Sources */,
 				4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */,
 				440E8F12229E1D5900114ACE /* AppearanceHelper.swift in Sources */,
 				44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
+				4478668A229F1C6300FFA53E /* PeopleAddPhotoViewController.swift in Sources */,
 				44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */,
 				D101FFB5229EF5A300D3A5A8 /* Bearer.swift in Sources */,
 				44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,
 				D101FFBB229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift in Sources */,
+				4478668E229F1CAB00FFA53E /* PeopleTableViewController.swift in Sources */,
 				44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */,
 				D16E58B2229DCD7E005ED951 /* TripsTableViewController.swift in Sources */,
 				D101FFB9229F134200D3A5A8 /* TripExpenseTableViewController.swift in Sources */,
+				44786695229F267E00FFA53E /* PersonExpenseTableViewCell.swift in Sources */,
 				4431C36C229D97BD00BA99B5 /* TripController.swift in Sources */,
 				4431C369229D961900BA99B5 /* User.swift in Sources */,
+				44786688229F1C5100FFA53E /* PeopleAddNameViewController.swift in Sources */,
+				44786693229F263C00FFA53E /* PersonSummaryTableViewCell.swift in Sources */,
 				D101FFB3229EF57A00D3A5A8 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
