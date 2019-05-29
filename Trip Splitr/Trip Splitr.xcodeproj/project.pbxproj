@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440E8F12229E1D5900114ACE /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E8F11229E1D5900114ACE /* AppearanceHelper.swift */; };
 		4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C354229D925A00BA99B5 /* AppDelegate.swift */; };
 		4431C35A229D925A00BA99B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4431C358229D925A00BA99B5 /* Main.storyboard */; };
 		4431C35C229D925A00BA99B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4431C35B229D925A00BA99B5 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440E8F11229E1D5900114ACE /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		4431C351229D925A00BA99B5 /* Trip Splitr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Splitr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4431C354229D925A00BA99B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4431C359229D925A00BA99B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				4431C354229D925A00BA99B5 /* AppDelegate.swift */,
+				440E8F11229E1D5900114ACE /* AppearanceHelper.swift */,
 				4431C36B229D97BD00BA99B5 /* TripController.swift */,
 				D131F4FC229DEC1A00C58357 /* TripViewControllers */,
 				D16E58AE229D99A1005ED951 /* Storyboards */,
@@ -191,6 +194,7 @@
 			files = (
 				4431C367229D951E00BA99B5 /* Trip.swift in Sources */,
 				4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */,
+				440E8F12229E1D5900114ACE /* AppearanceHelper.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,

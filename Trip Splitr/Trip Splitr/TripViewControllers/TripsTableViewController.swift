@@ -19,7 +19,7 @@ class TripsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+        setupAppearances()
         tableView.reloadData()
         
     }
@@ -53,7 +53,7 @@ class TripsTableViewController: UITableViewController {
                 cell.numberOfPeopleLabel.text = "\(trip.users!.count) people"
                 cell.dateLabel.text = trip.date
                 cell.costLabel.text = "\(trip.cost ?? 0)"
-
+                style(cell: cell)
             }
             return cell
         } else {
@@ -63,6 +63,7 @@ class TripsTableViewController: UITableViewController {
             if trip.past == true {
                 cell.dateLabel.text = trip.date
                 cell.tripNameLabel.text = trip.name
+                style(cell: cell)
             }
             return cell
 
@@ -70,6 +71,30 @@ class TripsTableViewController: UITableViewController {
 
     }
 
+    private func style(cell: UITableViewCell) {
+//        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
+
+        
+        cell.textLabel?.backgroundColor = .clear
+
+        
+        cell.textLabel?.textColor = AppearanceHelper.white
+
+        
+        cell.backgroundColor = AppearanceHelper.lightBlue
+    }
+    
+    private func setupAppearances() {
+        view.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
+        
+    }
+
+    
+    
+    
+    
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
