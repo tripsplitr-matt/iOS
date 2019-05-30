@@ -11,7 +11,7 @@ import UIKit
 class APIController {
 
     func logIn(with username: String, password: String, completion: @escaping (Error?) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("auth/signin")
+        let requestURL = baseURL.appendingPathComponent("auth/login")
 
         var request = URLRequest(url: requestURL)
 

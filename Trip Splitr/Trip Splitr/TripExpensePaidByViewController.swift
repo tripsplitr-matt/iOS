@@ -18,6 +18,9 @@ class TripExpensePaidByViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = AppearanceHelper.lightBlue
+            eventLabel.text = event
+        guard let cost = cost else { return }
+            costLabel.text = "$\(cost)"
         
     }
     /*
@@ -30,6 +33,9 @@ class TripExpensePaidByViewController: UIViewController {
     }
     */
 
+    var cost: Int?
+    var event: String?
+    var paidByArray: [User] = []
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var eventPaidByLabel: UILabel!
