@@ -13,10 +13,8 @@ class TripController {
 
 
     func createTrip(name: String, date: String) {
-
         let newId = Int.random(in: 1...100)
-
-        let newTrip = Trip(id: newId, name: name, date: "\(date)", users: [User(id: 56, name: "Imma", userName: "Getting", password: "Drunk", avatar: "Tonight")], cost: 0, creatorID: newId, past: false)
+        let newTrip = Trip(id: newId, name: name, date: "\(date)", users: [User( name: "Imma", username: "Getting", password: "Drunk")], cost: 0, creatorID: newId, past: false)
 
 
 

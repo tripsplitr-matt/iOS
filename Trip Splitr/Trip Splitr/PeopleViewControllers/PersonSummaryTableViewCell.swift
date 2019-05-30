@@ -21,4 +21,8 @@ class PersonSummaryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var usedLabel: UILabel!
+    @IBOutlet weak var spentLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var personImageView: UIImageView!
 }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="TTM-0y-pGF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="84" id="TTM-0y-pGF" customClass="PersonListTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTM-0y-pGF" id="sCC-qm-ZzM">
@@ -37,27 +37,19 @@
                                                         <constraint firstAttribute="width" secondItem="yF4-eg-4hG" secondAttribute="height" multiplier="1:1" id="Xs2-6X-wq0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katherine Murphy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-8T-6Ul">
-                                                    <rect key="frame" x="84" y="23" width="137" height="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katherine Ferrer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-8T-6Ul">
+                                                    <rect key="frame" x="84" y="23" width="124" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkQ-55-eFr">
-                                                    <rect key="frame" x="372" y="6" width="22" height="22"/>
-                                                    <connections>
-                                                        <segue destination="4ze-kt-Hkk" kind="show" identifier="PeopleSummary" id="OOZ-rO-9J3"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="yF4-eg-4hG" firstAttribute="leading" secondItem="GTR-Mw-rc0" secondAttribute="leading" constant="8" id="4fz-R7-fbg"/>
-                                                <constraint firstItem="GkQ-55-eFr" firstAttribute="top" secondItem="GTR-Mw-rc0" secondAttribute="top" constant="6" id="EGo-r2-sGq"/>
                                                 <constraint firstItem="1wx-8T-6Ul" firstAttribute="leading" secondItem="yF4-eg-4hG" secondAttribute="trailing" constant="8" id="Zqu-sv-9c7"/>
                                                 <constraint firstItem="1wx-8T-6Ul" firstAttribute="top" secondItem="GTR-Mw-rc0" secondAttribute="top" constant="23" id="flK-8y-6az"/>
                                                 <constraint firstItem="yF4-eg-4hG" firstAttribute="top" secondItem="GTR-Mw-rc0" secondAttribute="top" constant="8" id="jUi-tB-3Nt"/>
-                                                <constraint firstAttribute="trailing" secondItem="GkQ-55-eFr" secondAttribute="trailing" constant="20" id="lNl-w2-h2v"/>
                                                 <constraint firstAttribute="bottom" secondItem="1wx-8T-6Ul" secondAttribute="bottom" constant="24.5" id="rBy-Qv-oej"/>
                                                 <constraint firstAttribute="bottom" secondItem="yF4-eg-4hG" secondAttribute="bottom" constant="7.5" id="zHm-Wu-Yhy"/>
                                             </constraints>
@@ -70,6 +62,11 @@
                                         <constraint firstItem="GTR-Mw-rc0" firstAttribute="leading" secondItem="sCC-qm-ZzM" secondAttribute="leading" id="oIt-Ps-y8A"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="personImageView" destination="yF4-eg-4hG" id="2TS-Lz-zj8"/>
+                                    <outlet property="personNameLabel" destination="1wx-8T-6Ul" id="HjG-tE-CRd"/>
+                                    <segue destination="4ze-kt-Hkk" kind="show" identifier="PeopleSummary" id="KWt-17-fas"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="733.33333333333337" y="18.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--People Summary Table View Controller-->
         <scene sceneID="cmt-Wt-kal">
             <objects>
-                <tableViewController id="4ze-kt-Hkk" sceneMemberID="viewController">
+                <tableViewController id="4ze-kt-Hkk" customClass="PeopleSummaryTableViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="t6l-8R-L6x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +169,12 @@
                                         <constraint firstItem="Q0J-9r-SmM" firstAttribute="centerX" secondItem="udw-6C-OrR" secondAttribute="centerX" id="rOn-4q-cMT"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="tsz-Yz-uuU" id="ef5-UC-o6s"/>
+                                    <outlet property="personImageView" destination="Q0J-9r-SmM" id="Rve-4Y-YsI"/>
+                                    <outlet property="spentLabel" destination="ipF-XQ-RCf" id="cWv-Bg-N4F"/>
+                                    <outlet property="usedLabel" destination="zh3-qt-ghZ" id="MFP-Xg-5fJ"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonExpenseCell" rowHeight="68" id="LMl-hg-zHN" customClass="PersonExpenseTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="187" width="414" height="68"/>
