@@ -13,9 +13,9 @@ class TripsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //        if apiController.bearer == nil {
-        //            performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-        //        }
+            if apiController.bearer == nil {
+                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+            }
 
 
     }
@@ -155,7 +155,9 @@ class TripsTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             destinationVC?.tripController = tripController
             destinationVC?.trip = tripController.activeTrips[indexPath.row]
-
+        } else if segue.identifier == "LoginViewModalSegue" {
+            let destinationVC = segue.destination as? LoginViewController
+            destinationVC?.apiController = apiController
         }
 
 

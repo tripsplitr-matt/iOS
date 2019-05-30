@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         case .signUp:
             print("signUp")
-
+//
 //            apiController?.signUp(with: username, password: password, completion: { (error) in
 //
 //                if let error = error {
@@ -74,17 +74,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case .logIn:
             print("Login")
 
-//            apiController?.logIn(with: username, password: password, completion: { (error) in
-//                if let error = error {
-//                    NSLog("Error logging in: \(error)")
-//                } else {
-//                    DispatchQueue.main.async {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-//                }
-//            })
+            apiController?.logIn(with: username, password: password, completion: { (error) in
+                if let error = error {
+                    NSLog("Error logging in: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            })
         }
     }
+
+
+    var apiController: APIController?
 
     enum SignInType {
         case signUp
