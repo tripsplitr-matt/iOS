@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" title="Trip Expenses" id="Rwe-MX-UgU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JJW-Yv-g0j">
                             <connections>
-                                <segue destination="dX4-Kc-lmJ" kind="show" id="fCJ-8n-Wnw"/>
+                                <segue destination="dX4-Kc-lmJ" kind="show" identifier="AddEvent" id="fCJ-8n-Wnw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,12 +124,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg: Pizza, Uber Ride, Excursion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-hi-Dgd">
-                                <rect key="frame" x="20" y="268" width="374" height="30"/>
+                                <rect key="frame" x="20" y="268" width="325" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgV-0s-voJ">
+                                <rect key="frame" x="361" y="268" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="dX4-Kc-lmJ" eventType="touchUpInside" id="Qfv-Cs-EKW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jtw-Kd-QOp"/>
@@ -138,7 +146,8 @@
                     <navigationItem key="navigationItem" title="Event" id="2BH-Ot-dgM">
                         <barButtonItem key="rightBarButtonItem" title="Cost" id="Alf-rw-dfQ">
                             <connections>
-                                <segue destination="fKn-fJ-hRj" kind="show" id="xex-yu-3Mi"/>
+                                <action selector="costButtonPressed:" destination="dX4-Kc-lmJ" id="jIk-f3-SyX"/>
+                                <segue destination="fKn-fJ-hRj" kind="show" identifier="AddCost" id="xex-yu-3Mi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -160,9 +169,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-ej-5pn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-ej-5pn">
                                 <rect key="frame" x="20" y="178" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,20 +183,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Total In Dollars and Cents" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-za-N8a">
-                                <rect key="frame" x="20" y="268" width="374" height="30"/>
+                                <rect key="frame" x="20" y="268" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAk-Re-mNC">
+                                <rect key="frame" x="364" y="267" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="fKn-fJ-hRj" eventType="touchUpInside" id="4qE-cm-MYu"/>
+                                    <action selector="addButtonPressed:" destination="dX4-Kc-lmJ" eventType="touchUpInside" id="eid-8H-mQW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v5Z-ej-5pn" firstAttribute="leading" secondItem="4qN-XL-iQa" secondAttribute="leading" constant="20" id="GZr-fT-fxc"/>
+                            <constraint firstItem="4qN-XL-iQa" firstAttribute="bottom" secondItem="v5Z-ej-5pn" secondAttribute="bottom" constant="570" id="KJP-8m-iai"/>
+                            <constraint firstItem="v5Z-ej-5pn" firstAttribute="top" secondItem="4qN-XL-iQa" secondAttribute="top" constant="90" id="ofW-uC-afy"/>
+                            <constraint firstItem="4qN-XL-iQa" firstAttribute="trailing" secondItem="v5Z-ej-5pn" secondAttribute="trailing" constant="351" id="qyI-bN-cT2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qN-XL-iQa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cost" id="Nhp-Nq-DZJ">
                         <barButtonItem key="rightBarButtonItem" title="Paid By" id="bVc-lW-Kso">
                             <connections>
-                                <segue destination="ygb-zz-9Ky" kind="show" id="Wpk-xV-LRB"/>
+                                <segue destination="ygb-zz-9Ky" kind="show" identifier="AddPaidBy" id="Wpk-xV-LRB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

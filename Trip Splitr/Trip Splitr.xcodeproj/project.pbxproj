@@ -35,6 +35,9 @@
 		D101FFC4229F649500D3A5A8 /* TripName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFC3229F649500D3A5A8 /* TripName.swift */; };
 		D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */; };
 		D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */; };
+		D140C94E22A02EF200954050 /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C94D22A02EF200954050 /* LoginStruct.swift */; };
+		D140C95022A03D5E00954050 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C94F22A03D5E00954050 /* Expense.swift */; };
+		D140C95222A03DD800954050 /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95122A03DD800954050 /* ExpenseController.swift */; };
 		D16E58A8229D9959005ED951 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A7229D9959005ED951 /* Trips.storyboard */; };
 		D16E58AA229D9973005ED951 /* People.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A9229D9973005ED951 /* People.storyboard */; };
 		D16E58AC229D9986005ED951 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58AB229D9986005ED951 /* Transactions.storyboard */; };
@@ -73,6 +76,9 @@
 		D101FFC3229F649500D3A5A8 /* TripName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripName.swift; sourceTree = "<group>"; };
 		D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripTableViewCell.swift; sourceTree = "<group>"; };
 		D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		D140C94D22A02EF200954050 /* LoginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStruct.swift; sourceTree = "<group>"; };
+		D140C94F22A03D5E00954050 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		D140C95122A03DD800954050 /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
 		D16E58A7229D9959005ED951 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		D16E58A9229D9973005ED951 /* People.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = People.storyboard; sourceTree = "<group>"; };
 		D16E58AB229D9986005ED951 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				440E8F11229E1D5900114ACE /* AppearanceHelper.swift */,
 				4431C36B229D97BD00BA99B5 /* TripController.swift */,
 				D101FFB1229EF57A00D3A5A8 /* APIController.swift */,
+				D140C95122A03DD800954050 /* ExpenseController.swift */,
 				D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */,
 				4478668F229F1DD600FFA53E /* PeopleViewControllers */,
 				44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */,
@@ -133,7 +140,9 @@
 				4431C366229D951E00BA99B5 /* Trip.swift */,
 				4431C368229D961900BA99B5 /* User.swift */,
 				D101FFB4229EF5A300D3A5A8 /* Bearer.swift */,
+				D140C94D22A02EF200954050 /* LoginStruct.swift */,
 				D101FFC3229F649500D3A5A8 /* TripName.swift */,
+				D140C94F22A03D5E00954050 /* Expense.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,12 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D140C95222A03DD800954050 /* ExpenseController.swift in Sources */,
 				D101FFB2229EF57A00D3A5A8 /* LoginViewController.swift in Sources */,
 				D101FFBD229F156600D3A5A8 /* TransactionCellTableViewCell.swift in Sources */,
 				4431C367229D951E00BA99B5 /* Trip.swift in Sources */,
 				44786691229F1FF900FFA53E /* PeopleSummaryTableViewController.swift in Sources */,
 				4431C355229D925A00BA99B5 /* AppDelegate.swift in Sources */,
 				440E8F12229E1D5900114ACE /* AppearanceHelper.swift in Sources */,
+				D140C94E22A02EF200954050 /* LoginStruct.swift in Sources */,
 				44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
@@ -276,6 +287,7 @@
 				D101FFB5229EF5A300D3A5A8 /* Bearer.swift in Sources */,
 				44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,
+				D140C95022A03D5E00954050 /* Expense.swift in Sources */,
 				D101FFBB229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift in Sources */,
 				4478668E229F1CAB00FFA53E /* PeopleTableViewController.swift in Sources */,
 				D101FFC4229F649500D3A5A8 /* TripName.swift in Sources */,

@@ -93,7 +93,11 @@ class PeopleTableViewController: UITableViewController {
     var apiController = APIController()
     var people: [User] = [] {
         didSet {
-            tableView.reloadData()
+            
+            DispatchQueue.main.async {
+                  self.tableView.reloadData()
+          
+            }
         }
     }
 
