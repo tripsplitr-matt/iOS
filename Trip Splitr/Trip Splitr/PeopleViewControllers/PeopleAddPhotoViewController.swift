@@ -1,5 +1,5 @@
 //
-//  TripExpenseUsedByViewController.swift
+//  PeopleAddPhotoViewController.swift
 //  Trip Splitr
 //
 //  Created by Ryan Murphy on 5/29/19.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TripExpenseUsedByViewController: UIViewController {
+class PeopleAddPhotoViewController: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
+
         navigationController?.popToRootViewController(animated: true)
     }
 
@@ -19,10 +20,12 @@ class TripExpenseUsedByViewController: UIViewController {
         setupViews()
         // Do any additional setup after loading the view.
     }
-    
     private func setupViews() {
-        view.backgroundColor = AppearanceHelper.lightBlue
         
+        view.backgroundColor = AppearanceHelper.lightBlue
+        addedNameLabel.textColor = AppearanceHelper.darkBlue
+        selectPhotoButton.tintColor = AppearanceHelper.darkBlue
+        takePhotoButton.tintColor = AppearanceHelper.darkBlue
     }
 
     /*
@@ -34,9 +37,8 @@ class TripExpenseUsedByViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBOutlet weak var eventLabel: UILabel!
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var paidByLabel: UILabel!
-    @IBOutlet weak var tripUsedByLabel: UILabel!
-    @IBOutlet weak var tripUsedByCollectionView: UICollectionView!
+    @IBOutlet weak var takePhotoButton: UIButton!
+    @IBOutlet weak var addedNameLabel: UILabel!
+    @IBOutlet weak var selectPhotoButton: UIButton!
+    
 }

@@ -11,12 +11,12 @@ import Foundation
 
 
 struct User: Codable, Equatable {
-    var id: Int
+    //var id: Int
     var name: String
-    var userName: String
+    var username: String
     var password: String
 //     var spent: Int?
 //     var recieved: Int?
-    var avatar: String
+    //var avatar: String
     
 }

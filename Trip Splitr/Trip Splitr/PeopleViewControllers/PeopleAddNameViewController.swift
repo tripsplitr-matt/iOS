@@ -1,5 +1,5 @@
 //
-//  TripExpenseUsedByViewController.swift
+//  PeopleAddNameViewController.swift
 //  Trip Splitr
 //
 //  Created by Ryan Murphy on 5/29/19.
@@ -8,11 +8,7 @@
 
 import UIKit
 
-class TripExpenseUsedByViewController: UIViewController {
-
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
+class PeopleAddNameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +16,15 @@ class TripExpenseUsedByViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
     private func setupViews() {
+        
         view.backgroundColor = AppearanceHelper.lightBlue
+        addNameTextField.backgroundColor = AppearanceHelper.lightGray
         
     }
-
+    
+    
     /*
     // MARK: - Navigation
 
@@ -34,9 +34,8 @@ class TripExpenseUsedByViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBOutlet weak var eventLabel: UILabel!
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var paidByLabel: UILabel!
-    @IBOutlet weak var tripUsedByLabel: UILabel!
-    @IBOutlet weak var tripUsedByCollectionView: UICollectionView!
+    @IBOutlet weak var addNameTextField: UITextField!
+    
+    
+    
 }

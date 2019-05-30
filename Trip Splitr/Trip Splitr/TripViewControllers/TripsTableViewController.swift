@@ -13,24 +13,54 @@ class TripsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if apiController.bearer == nil {
-//            performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-//        }
+        //        if apiController.bearer == nil {
+        //            performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+        //        }
 
 
     }
 
-    
+    func convertTrips() {
+
+        for trip in tripNames {
+            let name = trip.name
+            let date = trip.date
+            tripController.createTrip(name: name, date: date)
+        }
+
+
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+
+        apiController.getTrips { (result) in
+
+            do {
+                self.tripNames = try result.get()
+
+                DispatchQueue.main.async {
+
+                    self.tableView.reloadData()
+                    print(self.tripNames)
+                }
+
+            } catch {
+                NSLog("Error getting all trips")
+            }
+
+
+        }
+        convertTrips()
+        print(tripController.allTrips)
         setupAppearances()
         tableView.reloadData()
-        
     }
-    
+
     // MARK: - Table view data source
 
-    
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -47,7 +77,7 @@ class TripsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
             let trip = tripController.activeTrips[indexPath.row]
@@ -76,22 +106,22 @@ class TripsTableViewController: UITableViewController {
     }
 
     private func style(cell: UITableViewCell) {
-//        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
+        //        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
 
         cell.backgroundColor = AppearanceHelper.lightBlue
     }
-    
+
     private func setupAppearances() {
         view.backgroundColor = AppearanceHelper.mediumBlue
         tableView.backgroundColor = AppearanceHelper.mediumBlue
         tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
-        
+
     }
 
-    
-    
-    
-    
+
+
+
+
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
@@ -125,14 +155,15 @@ class TripsTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             destinationVC?.tripController = tripController
             destinationVC?.trip = tripController.activeTrips[indexPath.row]
- 
+
         }
-        
+
 
     }
 
 
     var tripController = TripController()
     var apiController = APIController()
+    var tripNames: [TripName] = []
 
 }

@@ -26,31 +26,31 @@ class TripDetailViewController: UIViewController {
         tripNameTextField.backgroundColor = AppearanceHelper.lightGray
         tripImageTextField.backgroundColor = AppearanceHelper.lightGray
     }
-    
-    
+
+
     func updateTrip() {
         guard let trip = trip else { return }
         tripNameTextField.text = trip.name
 
-//        let isoDate = trip.date
-//        let dateFormatter = ISO8601DateFormatter()
-//        let date = dateFormatter.date(from:isoDate)!
-//
-//        datePicker.date = date
+        //        let isoDate = trip.date
+        //        let dateFormatter = ISO8601DateFormatter()
+        //        let date = dateFormatter.date(from:isoDate)!
+        //
+        //        datePicker.date = date
 
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
-        tripController?.createTrip(name: tripNameTextField.text!, date: datePicker.date)
+        tripController?.createTrip(name: tripNameTextField.text!, date: "\(datePicker.date)")
         print(datePicker.date)
         self.dismiss(animated: true)
     }
-    
+
     @IBOutlet weak var tripImageTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tripNameTextField: UITextField!
     var tripController: TripController?
     var trip: Trip?
-    
-    
+
+
 }
