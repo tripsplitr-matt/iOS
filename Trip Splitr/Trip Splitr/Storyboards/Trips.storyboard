@@ -276,22 +276,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-JW-u7s">
-                                <rect key="frame" x="40" y="269" width="334" height="177"/>
+                                <rect key="frame" x="40" y="269" width="334" height="263"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-8G-Kp3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mey-D5-G9g">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-l5-0gk">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-8G-Kp3">
                                         <rect key="frame" x="0.0" y="43" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-l5-0gk">
+                                        <rect key="frame" x="0.0" y="86" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OX1-fD-Dxw">
+                                        <rect key="frame" x="0.0" y="129" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrT-Cz-uD2">
-                                        <rect key="frame" x="0.0" y="86" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="172" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="85f-Bj-pUf"/>
                                         </constraints>
@@ -303,7 +315,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5b6-6g-2Ln">
-                                        <rect key="frame" x="0.0" y="149" width="334" height="29"/>
+                                        <rect key="frame" x="0.0" y="235" width="334" height="29"/>
                                         <segments>
                                             <segment title="Sign Up"/>
                                             <segment title="Sign In"/>
@@ -325,7 +337,9 @@
                         <viewLayoutGuide key="safeArea" id="Gv5-ja-3iA"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="OX1-fD-Dxw" id="Myc-GZ-hMI"/>
                         <outlet property="loginTypeSegmentedControl" destination="5b6-6g-2Ln" id="vea-De-abh"/>
+                        <outlet property="nameTextField" destination="Mey-D5-G9g" id="K4p-c2-6Aj"/>
                         <outlet property="passwordTextField" destination="ez4-l5-0gk" id="hLy-89-Mnw"/>
                         <outlet property="signInButton" destination="XrT-Cz-uD2" id="mKN-zc-3Ov"/>
                         <outlet property="usernameTextField" destination="6NS-8G-Kp3" id="Gog-Gx-Fnn"/>

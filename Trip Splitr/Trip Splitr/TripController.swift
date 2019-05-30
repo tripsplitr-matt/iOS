@@ -12,9 +12,11 @@ class TripController {
 
 
 
-    func createTrip(name: String, date: String) {
-        let newId = Int.random(in: 1...100)
-        let newTrip = Trip(id: newId, name: name, date: "\(date)", users: [User( name: "Imma", username: "Getting", password: "Drunk")], cost: 0, expenses: [] ,creatorID: newId, past: false)
+    func createTrip(name: String, date: String, img: String) {
+
+        let newTrip = Trip(name: name, date: date, users: [], cost: 0, img: img, expenses: [], creatorID: 9, past: false)
+
+            //Trip(id: newId, name: name, date: "\(date)", users: [User( name: "Imma", username: "Getting", password: "Drunk")], cost: 0, expenses: [] ,creatorID: newId, past: false)
 
 
 
@@ -22,6 +24,8 @@ class TripController {
         allTrips.append(newTrip)
 
     }
+
+    
 
     var allTrips: [Trip] = []
 

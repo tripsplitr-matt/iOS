@@ -10,12 +10,24 @@ import Foundation
 
 
 struct Trip: Codable, Equatable {
-    var id: Int
+
+    enum CodingKeys: String, CodingKey {
+        //case id
+        case name
+        case date
+        case users = "participants"
+        case cost = "base_cost"
+        case expenses
+        case creatorID = "user_id"
+        case past = "complete"
+    }
+
+    //var id: Int
     var name: String
     var date: String
     var users: [User]?
     var cost: Int?
-//    var image: String
+    var img: String?
     var expenses: [Expense]?
     var creatorID: Int
     var past: Bool

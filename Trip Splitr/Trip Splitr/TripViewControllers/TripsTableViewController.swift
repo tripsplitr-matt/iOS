@@ -12,21 +12,10 @@ class TripsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//            if apiController.bearer == nil {
-//                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-//            }
 
-
-    }
-
-    func convertTrips() {
-
-        for trip in tripNames {
-            let name = trip.name
-            let date = trip.date
-            tripController.createTrip(name: name, date: date)
-        }
+            if apiController.bearer == nil {
+                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+            }
 
 
     }
@@ -36,24 +25,17 @@ class TripsTableViewController: UITableViewController {
         super.viewDidAppear(true)
 
         apiController.getTrips { (result) in
-
             do {
                 self.tripNames = try result.get()
-
                 DispatchQueue.main.async {
-
                     self.tableView.reloadData()
                     print(self.tripNames)
                 }
-
             } catch {
                 NSLog("Error getting all trips")
             }
-
-
         }
-        convertTrips()
-        print(tripController.allTrips)
+        //sortTrips()
         setupAppearances()
         tableView.reloadData()
     }
@@ -161,6 +143,31 @@ class TripsTableViewController: UITableViewController {
         }
 
 
+    }
+
+    func sortTrips() {
+
+
+        for trip in tripNames {
+            var currentTrip: Trip?
+
+            guard let tripID = tripNames.firstIndex(of: trip) else { return }
+
+            apiController.getTrip(tripID: tripID) { (result) in
+                do {
+                    currentTrip = try result.get()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        print(currentTrip!)
+                    }
+                } catch {
+                    NSLog("Error getting all trips")
+                }
+            }
+
+            //tripController.allTrips.append( currentTrip )
+
+        }
     }
 
 
