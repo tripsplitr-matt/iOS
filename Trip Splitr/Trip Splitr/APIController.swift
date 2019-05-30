@@ -11,103 +11,52 @@ import UIKit
 class APIController {
 
 
-    func signUp(with username: String, password: String, completion: @escaping (Error?) -> Void) {
+    func getTrips(completion: @escaping (Result<[TripName], NetworkError>) -> Void) {
 
-        let requestURL = baseURL.appendingPathComponent("auth/register")
+        //                guard let bearer = bearer else {
+        //                    NSLog("No bearer token available")
+        //                    completion(.failure(.noBearer))
+        //                    return
+        //                }
 
-        var request = URLRequest(url: requestURL)
-
-        request.httpMethod = HTTPMethod.post.rawValue
-
-        // The body of our request is JSON.
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let user = User(id: <#T##Int#>, name: <#T##String#>, userName: <#T##String#>, password: <#T##String#>, avatar: <#T##String#>)
-
-        do {
-            request.httpBody = try JSONEncoder().encode(user)
-        } catch {
-            NSLog("Error encoding User: \(error)")
-            completion(error)
-            return
-        }
-
-        URLSession.shared.dataTask(with: request) { (_, response, error) in
-
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-
-                // Something went wrong
-                completion(NSError())
-                return
-            }
-
-            if let error = error {
-                NSLog("Error signing up: \(error)")
-                completion(error)
-                return
-            }
-
-            completion(nil)
-            }.resume()
-    }
-
-    func logIn(with username: String, password: String, completion: @escaping (Error?) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("auth/login")
+        let requestURL = baseURL
+            .appendingPathComponent("trips")
 
         var request = URLRequest(url: requestURL)
 
-        request.httpMethod = HTTPMethod.post.rawValue
+        // If the method is GET, there is no body
+        request.httpMethod = HTTPMethod.get.rawValue
 
-        // The body of our request is JSON.
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //                // This is our method of authenticating with the API.
+        //                request.addValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
 
-        let user = User(id: <#T##Int#>, name: <#T##String#>, userName: <#T##String#>, password: <#T##String#>, avatar: <#T##String#>)
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
 
-        do {
-            request.httpBody = try JSONEncoder().encode(user)
-        } catch {
-            NSLog("Error encoding User: \(error)")
-            completion(error)
-            return
-        }
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-
-                // Something went wrong
-                completion(NSError())
-                return
-            }
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode == 401 {
+//                completion(.failure(.badAuth))
+//                return
+//            }
 
             if let error = error {
-                NSLog("Error logging in: \(error)")
-                completion(error)
+                NSLog("Error getting trips: \(error)")
+                completion(.failure(.apiError))
                 return
             }
-
-            // Get the bearer token by decoding it.
 
             guard let data = data else {
-                NSLog("No data returned from data task")
-                completion(NSError())
+                completion(.failure(.noDataReturned))
                 return
             }
 
             let decoder = JSONDecoder()
 
             do {
-                let bearer = try decoder.decode(Bearer.self, from: data)
-
-                // We now have the bearer to authenticate the other requests
-                self.bearer = bearer
-                completion(nil)
+                let trips = try decoder.decode([TripName].self, from: data)
+                completion(.success(trips))
             } catch {
-                NSLog("Error decoding Bearer: \(error)")
-                completion(error)
-                return
+                NSLog("Error decoding trips: \(error)")
+                completion(.failure(.noDecode))
             }
             }.resume()
     }

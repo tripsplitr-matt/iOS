@@ -31,6 +31,7 @@
 		D101FFB9229F134200D3A5A8 /* TripExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFB8229F134200D3A5A8 /* TripExpenseTableViewController.swift */; };
 		D101FFBB229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFBA229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift */; };
 		D101FFBD229F156600D3A5A8 /* TransactionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFBC229F156600D3A5A8 /* TransactionCellTableViewCell.swift */; };
+		D101FFC2229F54C800D3A5A8 /* TripName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFC1229F54C800D3A5A8 /* TripName.swift */; };
 		D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */; };
 		D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */; };
 		D16E58A8229D9959005ED951 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A7229D9959005ED951 /* Trips.storyboard */; };
@@ -67,6 +68,7 @@
 		D101FFB8229F134200D3A5A8 /* TripExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseTableViewController.swift; path = "Trip Splitr/ExpensesViewControllers/TripExpenseTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D101FFBA229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionsTotalTableViewCell.swift; path = "Trip Splitr/ExpensesViewControllers/TransactionsTotalTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		D101FFBC229F156600D3A5A8 /* TransactionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionCellTableViewCell.swift; path = "Trip Splitr/ExpensesViewControllers/TransactionCellTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		D101FFC1229F54C800D3A5A8 /* TripName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripName.swift; sourceTree = "<group>"; };
 		D131F4FA229DD62D00C58357 /* PastTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripTableViewCell.swift; sourceTree = "<group>"; };
 		D131F4FD229DEC5000C58357 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		D16E58A7229D9959005ED951 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				4431C366229D951E00BA99B5 /* Trip.swift */,
 				4431C368229D961900BA99B5 /* User.swift */,
 				D101FFB4229EF5A300D3A5A8 /* Bearer.swift */,
+				D101FFC1229F54C800D3A5A8 /* TripName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
+				D101FFC2229F54C800D3A5A8 /* TripName.swift in Sources */,
 				4478668A229F1C6300FFA53E /* PeopleAddPhotoViewController.swift in Sources */,
 				44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */,
 				D101FFB5229EF5A300D3A5A8 /* Bearer.swift in Sources */,

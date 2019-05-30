@@ -41,7 +41,7 @@ class TripDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
-        tripController?.createTrip(name: tripNameTextField.text!, date: datePicker.date)
+        tripController?.createTrip(name: tripNameTextField.text!, date: "\(datePicker.date)")
         print(datePicker.date)
         self.dismiss(animated: true)
     }

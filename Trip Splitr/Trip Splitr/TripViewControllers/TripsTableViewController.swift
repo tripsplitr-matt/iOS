@@ -20,12 +20,42 @@ class TripsTableViewController: UITableViewController {
 
     }
 
+    func convertTrips() {
+
+        for trip in tripNames {
+            let name = trip.name
+            let date = trip.date
+            tripController.createTrip(name: name, date: date)
+        }
+
+
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+
+        apiController.getTrips { (result) in
+
+            do {
+                self.tripNames = try result.get()
+
+                DispatchQueue.main.async {
+
+                self.tableView.reloadData()
+                print(self.tripNames)
+            }
+
+        } catch {
+            NSLog("Error getting all trips")
+        }
+
+
+    }
+        convertTrips()
+        print(tripController.allTrips)
         setupAppearances()
         tableView.reloadData()
-        
     }
     
     // MARK: - Table view data source
@@ -134,5 +164,6 @@ class TripsTableViewController: UITableViewController {
 
     var tripController = TripController()
     var apiController = APIController()
+    var tripNames: [TripName] = []
 
 }
