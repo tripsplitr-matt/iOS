@@ -26,6 +26,7 @@ class PeopleAddPhotoViewController: UIViewController {
         addedNameLabel.textColor = AppearanceHelper.darkBlue
         selectPhotoButton.tintColor = AppearanceHelper.darkBlue
         takePhotoButton.tintColor = AppearanceHelper.darkBlue
+        addedNameLabel.text = name
     }
 
     /*
@@ -40,5 +41,6 @@ class PeopleAddPhotoViewController: UIViewController {
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var addedNameLabel: UILabel!
     @IBOutlet weak var selectPhotoButton: UIButton!
+    var name: String?
     
 }

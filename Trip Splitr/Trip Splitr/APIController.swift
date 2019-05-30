@@ -54,7 +54,7 @@ class APIController {
 
 
     func logIn(with username: String, password: String, completion: @escaping (Error?) -> Void) {
-        
+
         let requestURL = baseURL.appendingPathComponent("auth/login")
 
         var request = URLRequest(url: requestURL)
@@ -154,7 +154,7 @@ class APIController {
             }
 
             let decoder = JSONDecoder()
-
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
                 let trip = try decoder.decode(Trip.self, from: data)
                 completion(.success(trip))

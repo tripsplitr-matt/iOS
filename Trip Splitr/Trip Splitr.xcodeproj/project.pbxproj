@@ -148,8 +148,8 @@
 				4431C368229D961900BA99B5 /* User.swift */,
 				D140C95322A073BB00954050 /* Register.swift */,
 				D101FFB4229EF5A300D3A5A8 /* Bearer.swift */,
-				D140C94D22A02EF200954050 /* LoginStruct.swift */,
 				D101FFC3229F649500D3A5A8 /* TripName.swift */,
+				D140C94D22A02EF200954050 /* LoginStruct.swift */,
 				D140C94F22A03D5E00954050 /* Expense.swift */,
 			);
 			path = Models;
@@ -206,9 +206,9 @@
 		D16E58AE229D99A1005ED951 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D16E58A9229D9973005ED951 /* People.storyboard */,
 				4431C358229D925A00BA99B5 /* Main.storyboard */,
 				D16E58A7229D9959005ED951 /* Trips.storyboard */,
-				D16E58A9229D9973005ED951 /* People.storyboard */,
 				D16E58AB229D9986005ED951 /* Transactions.storyboard */,
 			);
 			path = Storyboards;

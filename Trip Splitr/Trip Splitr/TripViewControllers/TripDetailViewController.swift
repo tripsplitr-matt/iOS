@@ -31,6 +31,7 @@ class TripDetailViewController: UIViewController {
     func updateTrip() {
         guard let trip = trip else { return }
         tripNameTextField.text = trip.name
+        tripImageTextField.text = trip.img
 
         //        let isoDate = trip.date
         //        let dateFormatter = ISO8601DateFormatter()
@@ -41,9 +42,22 @@ class TripDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
+        guard let name = tripNameTextField.text,
+            !name.isEmpty, let img = tripImageTextField.text,
+            !img.isEmpty
+            else { return }
+
+        if let _ = trip {
+            self.trip!.name = name
+            self.trip!.img = img
+            self.dismiss(animated: true)
+
+        } else {
+
         tripController?.createTrip(name: tripNameTextField.text ?? "", date: "\(datePicker.date)", img: tripImageTextField.text ?? "")
-        print(datePicker.date)
+
         self.dismiss(animated: true)
+    }
     }
 
     @IBOutlet weak var tripImageTextField: UITextField!

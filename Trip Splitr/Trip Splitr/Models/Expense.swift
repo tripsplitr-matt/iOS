@@ -10,10 +10,10 @@ import Foundation
 
 struct Expense: Codable, Equatable {
 
-    let event: String
-    let cost: Int
-    let paidBy: [User]
-    let usedBy: [User]
+    var event: String
+    var cost: Int
+    var paidBy: [User]
+    var usedBy: [User]
 
 
 }

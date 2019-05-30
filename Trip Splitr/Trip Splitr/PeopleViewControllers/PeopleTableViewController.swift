@@ -12,27 +12,25 @@ class PeopleTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        apiController.getUsers { (result) in
-
-            do {
-                self.people = try result.get()
-
-                DispatchQueue.main.async {
-
-                    self.tableView.reloadData()
-                    print(self.people)
-                }
-
-            } catch {
-                NSLog("Error getting all trips")
-            }
-
-
-        }
-
-        tableView.reloadData()
-
-
+//        apiController.getUsers { (result) in
+//
+//            do {
+//                self.people = try result.get()
+//
+//                DispatchQueue.main.async {
+//
+//                    self.tableView.reloadData()
+//                    print(self.people)
+//                }
+//
+//            } catch {
+//                NSLog("Error getting all trips")
+//            }
+//
+//
+//        }
+//
+//        tableView.reloadData()
     }
 
     override func viewDidLoad() {

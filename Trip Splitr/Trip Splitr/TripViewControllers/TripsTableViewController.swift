@@ -13,11 +13,18 @@ class TripsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            if apiController.bearer == nil {
-                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-            }
-
-
+//            if apiController.bearer == nil {
+//                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+//            }
+//        apiController.getTrip(tripID: 1) { (result) in
+//            do {
+//                let trip = try result.get()
+//                print(trip)
+//
+//        } catch {
+//            print("no")
+//        }
+//        }
     }
 
 
@@ -35,7 +42,7 @@ class TripsTableViewController: UITableViewController {
                 NSLog("Error getting all trips")
             }
         }
-        //sortTrips()
+
         setupAppearances()
         tableView.reloadData()
     }
@@ -64,11 +71,11 @@ class TripsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
             let trip = tripController.activeTrips[indexPath.row]
 
-            if trip.past == false {
+            if trip.complete == false {
                 cell.tripNameLabel.text = trip.name
-                cell.numberOfPeopleLabel.text = "\(trip.users!.count) people"
+                cell.numberOfPeopleLabel.text = "\(trip.participants!.count) people"
                 cell.dateLabel.text = trip.date
-                cell.costLabel.text = "\(trip.cost ?? 0)"
+                cell.costLabel.text = "\(trip.baseCost ?? 0)"
                 style(cell: cell)
             }
             return cell
@@ -76,7 +83,7 @@ class TripsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
             let trip = tripController.pastTrips[indexPath.row]
 
-            if trip.past == true {
+            if trip.complete == true {
                 cell.dateLabel.text = trip.date
                 cell.tripNameLabel.text = trip.name
                 style(cell: cell)
@@ -145,34 +152,34 @@ class TripsTableViewController: UITableViewController {
 
     }
 
-    func sortTrips() {
-
-
-        for trip in tripNames {
-            var currentTrip: Trip?
-
-            guard let tripID = tripNames.firstIndex(of: trip) else { return }
-
-            apiController.getTrip(tripID: tripID) { (result) in
-                do {
-                    currentTrip = try result.get()
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        print(currentTrip!)
-                    }
-                } catch {
-                    NSLog("Error getting all trips")
-                }
-            }
-
-            //tripController.allTrips.append( currentTrip )
-
-        }
-    }
+//    func sortTrips() {
+//
+//        let tripCount = tripNames.count
+//
+//        for tripID in 1...tripCount {
+//            var trip: Trip?
+//            apiController.getTrip(tripID: tripID) { (result) in
+//                do {
+//                    trip = try result.get()
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                        print(trip!)
+//                    }
+//                } catch {
+//                    NSLog("Error getting all trips")
+//                }
+//            }
+//
+//
+//
+//        }
+//
+//
+//    }
 
 
     var tripController = TripController()
     var apiController = APIController()
-    var tripNames: [TripName] = []
+    var tripNames: [TripName] = [] 
 
 }
