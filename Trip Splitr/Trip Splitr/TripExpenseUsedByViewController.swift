@@ -10,6 +10,10 @@ import UIKit
 
 class TripExpenseUsedByViewController: UIViewController {
 
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()

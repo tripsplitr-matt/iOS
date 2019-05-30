@@ -282,7 +282,11 @@
                         <viewLayoutGuide key="safeArea" id="WWn-Wz-xUZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="JN9-J5-6Wh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iAg-W1-1D6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iAg-W1-1D6">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="FTg-bW-Utc" id="EkG-u4-MUM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addedNameLabel" destination="d4e-gn-3cQ" id="58R-o6-lkn"/>

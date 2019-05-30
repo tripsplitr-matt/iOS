@@ -356,7 +356,11 @@
                         <viewLayoutGuide key="safeArea" id="mkT-ZW-lih"/>
                     </view>
                     <navigationItem key="navigationItem" title="Used By" id="2eM-ut-dOQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LKh-vd-Nt7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LKh-vd-Nt7">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="XjO-LL-E87" id="N4Q-FM-D74"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="costLabel" destination="dzH-Mc-UdT" id="aeX-yr-CiV"/>
