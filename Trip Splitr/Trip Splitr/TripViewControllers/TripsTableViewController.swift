@@ -12,10 +12,10 @@ class TripsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            if apiController.bearer == nil {
-                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-            }
+//
+//            if apiController.bearer == nil {
+//                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+//            }
 
 
     }

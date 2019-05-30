@@ -21,4 +21,8 @@ class PersonExpenseTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var expenseItemNameLabel: UILabel!
+    @IBOutlet weak var splitExpenseItemWithLabel: UILabel!
+    @IBOutlet weak var expenseItemDenominationLabel: UILabel!
+    
 }
