@@ -32,11 +32,11 @@ class APIController {
 
         URLSession.shared.dataTask(with: request) { (data, _, error) in
 
-//            if let response = response as? HTTPURLResponse,
-//                response.statusCode == 401 {
-//                completion(.failure(.badAuth))
-//                return
-//            }
+            //            if let response = response as? HTTPURLResponse,
+            //                response.statusCode == 401 {
+            //                completion(.failure(.badAuth))
+            //                return
+            //            }
 
             if let error = error {
                 NSLog("Error getting trips: \(error)")
