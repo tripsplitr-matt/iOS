@@ -12,7 +12,7 @@ class TripExpenseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,6 +31,21 @@ class TripExpenseTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    
+    private func style(cell: UITableViewCell) {
+        //        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
+        
+        cell.backgroundColor = AppearanceHelper.lightBlue
+    }
+    
+    private func setupViews() {
+        view.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
+        
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
