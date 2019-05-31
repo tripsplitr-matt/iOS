@@ -136,7 +136,7 @@ class UsedByCollectionViewController: UICollectionViewController {
 
 
     func setupVeiws() {
-        collectionView.backgroundColor = AppearanceHelper.mediumBlue
+        collectionView.backgroundColor = AppearanceHelper.lightBlue
 
     }
     var usedByString: String = ""

@@ -53,7 +53,7 @@ class ConfirmExpenseViewController: UIViewController {
         costLabel.text = "$\(cost)"
         eventLabel.text = event
 
-       
+       view.backgroundColor = AppearanceHelper.lightBlue
 
     }
 

@@ -90,7 +90,7 @@ class PaidByCollectionViewController: UICollectionViewController {
     }
 
     func setupVeiws() {
-        collectionView.backgroundColor = AppearanceHelper.mediumBlue
+        collectionView.backgroundColor = AppearanceHelper.lightBlue
 
     }
 
