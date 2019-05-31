@@ -361,13 +361,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o9X-E1-wZx">
                             <size key="itemSize" width="140" height="180"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="114"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="30" minY="16" maxX="30" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UsedBy" id="aCt-HF-YRO" userLabel="UsedBy" customClass="UsedByCollectionViewCell" customModule="Trip_Splitr" customModuleProvider="target">
-                                <rect key="frame" x="30" y="16" width="140" height="180"/>
+                                <rect key="frame" x="30" y="130" width="140" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
@@ -424,6 +424,50 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="UsedByHeader" id="HQG-uo-6V5" customClass="UsedByCollectionReusableView" customModule="Trip_Splitr" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEt-Bs-PeT">
+                                    <rect key="frame" x="57" y="18" width="175" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epd-l5-Wlw">
+                                    <rect key="frame" x="57" y="63" width="175" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-Av-9Oz">
+                                    <rect key="frame" x="232" y="18" width="174" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Nrj-Av-9Oz" secondAttribute="height" multiplier="58:7" id="wFX-NQ-MtO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Epd-l5-Wlw" firstAttribute="top" secondItem="PEt-Bs-PeT" secondAttribute="bottom" constant="24.5" id="2S0-gK-tMf"/>
+                                <constraint firstItem="PEt-Bs-PeT" firstAttribute="top" secondItem="HQG-uo-6V5" secondAttribute="top" constant="18" id="5oA-QI-Be8"/>
+                                <constraint firstAttribute="trailing" secondItem="Epd-l5-Wlw" secondAttribute="trailing" constant="182" id="7Dl-Ra-WDJ"/>
+                                <constraint firstAttribute="trailing" secondItem="PEt-Bs-PeT" secondAttribute="trailing" constant="182" id="aae-W7-cXO"/>
+                                <constraint firstItem="Epd-l5-Wlw" firstAttribute="leading" secondItem="HQG-uo-6V5" secondAttribute="leading" constant="57" id="ahl-7y-niI"/>
+                                <constraint firstItem="PEt-Bs-PeT" firstAttribute="leading" secondItem="HQG-uo-6V5" secondAttribute="leading" constant="57" id="fEF-n3-cBC"/>
+                                <constraint firstItem="Nrj-Av-9Oz" firstAttribute="trailing" secondItem="HQG-uo-6V5" secondAttribute="trailingMargin" id="kNk-7O-j2W"/>
+                                <constraint firstItem="Nrj-Av-9Oz" firstAttribute="top" secondItem="HQG-uo-6V5" secondAttribute="topMargin" constant="10" id="nOP-GD-eGx"/>
+                                <constraint firstAttribute="bottom" secondItem="Epd-l5-Wlw" secondAttribute="bottom" constant="30.5" id="rXZ-xC-giE"/>
+                                <constraint firstItem="Epd-l5-Wlw" firstAttribute="top" secondItem="Nrj-Av-9Oz" secondAttribute="bottom" constant="24" id="yWb-S8-ieq"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="costLabel" destination="Epd-l5-Wlw" id="tQ1-Ka-5eK"/>
+                                <outlet property="eventLabel" destination="PEt-Bs-PeT" id="hD7-gY-ErJ"/>
+                                <outlet property="paidByLabel" destination="Nrj-Av-9Oz" id="aPM-JO-yuy"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="RV3-os-xnC" id="gIt-xz-keb"/>
                             <outlet property="delegate" destination="RV3-os-xnC" id="svO-xl-dhB"/>
@@ -439,7 +483,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqu-9h-TPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3199" y="145"/>
+            <point key="canvasLocation" x="3198.5507246376815" y="144.64285714285714"/>
         </scene>
         <!--Paid By-->
         <scene sceneID="wfn-hb-MfF">

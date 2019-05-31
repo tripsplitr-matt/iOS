@@ -30,6 +30,7 @@
 		44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */; };
 		44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */; };
 		44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */; };
+		44EBF48D22A1683A00C8083C /* UsedByCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF48C22A1683A00C8083C /* UsedByCollectionReusableView.swift */; };
 		D101FFB2229EF57A00D3A5A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */; };
 		D101FFB3229EF57A00D3A5A8 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFB1229EF57A00D3A5A8 /* APIController.swift */; };
 		D101FFB5229EF5A300D3A5A8 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101FFB4229EF5A300D3A5A8 /* Bearer.swift */; };
@@ -79,6 +80,7 @@
 		44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpensePaidByViewController.swift; path = ../TripExpensePaidByViewController.swift; sourceTree = "<group>"; };
 		44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseUsedByViewController.swift; path = ../TripExpenseUsedByViewController.swift; sourceTree = "<group>"; };
 		44DF75E4229EEDB700AC0FBC /* TripExpenseEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripExpenseEventViewController.swift; sourceTree = "<group>"; };
+		44EBF48C22A1683A00C8083C /* UsedByCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedByCollectionReusableView.swift; sourceTree = "<group>"; };
 		D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Trip Splitr/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D101FFB1229EF57A00D3A5A8 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = "Trip Splitr/APIController.swift"; sourceTree = SOURCE_ROOT; };
 		D101FFB4229EF5A300D3A5A8 /* Bearer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = "Trip Splitr/Models/Bearer.swift"; sourceTree = SOURCE_ROOT; };
@@ -175,6 +177,7 @@
 				44B06F6F22A0A68A003AAE89 /* PaidByCollectionViewController.swift */,
 				44B06F7122A0A699003AAE89 /* UsedByCollectionViewController.swift */,
 				D140C95A22A0DD5000954050 /* PaidByCollectionReusableView.swift */,
+				44EBF48C22A1683A00C8083C /* UsedByCollectionReusableView.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				D140C94E22A02EF200954050 /* LoginStruct.swift in Sources */,
 				4443745B22A05B6C00998466 /* PaidByCollectionViewCell.swift in Sources */,
 				44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */,
+				44EBF48D22A1683A00C8083C /* UsedByCollectionReusableView.swift in Sources */,
 				D131F4FE229DEC5000C58357 /* TripDetailViewController.swift in Sources */,
 				D16E58B6229DCF76005ED951 /* ActiveTripTableViewCell.swift in Sources */,
 				D140C95422A073BB00954050 /* Register.swift in Sources */,
