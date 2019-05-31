@@ -42,7 +42,7 @@
                                             <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="✕  END TRIP"/>
                                             <connections>
-                                                <action selector="endTripButtonPressed:" destination="Qpf-hg-O6A" eventType="touchUpInside" id="2LX-Mx-Z56"/>
+                                                <action selector="endTripButtonPressed:" destination="yjY-yz-QuA" eventType="primaryActionTriggered" id="LRk-5g-KdC"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,088.43 spent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-pl-q4u">

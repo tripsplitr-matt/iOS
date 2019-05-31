@@ -63,7 +63,8 @@ class PeopleSummaryTableViewController: UITableViewController {
             let expense = expenses[indexPath.row]
             
             cell.expenseItemNameLabel.text = expense.event
-            cell.expenseItemDenominationLabel.text = "\(expense.cost)"
+            cell.expenseItemDenominationLabel.text = "$\(expense.cost)"
+            cell.expenseItemDenominationLabel.textColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
             if expense.usedBy.count == 2 {
                 cell.splitExpenseItemWithLabel.text = "\(expense.paidBy.name) split with \(expense.usedBy.count - 1) person"
             } else {

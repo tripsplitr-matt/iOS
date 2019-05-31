@@ -9,9 +9,9 @@
 import UIKit
 
 class TransactionsTotalTableViewCell: UITableViewCell {
+    
+    
 
-    @IBAction func endTripButtonPressed(_ sender: Any) {
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
