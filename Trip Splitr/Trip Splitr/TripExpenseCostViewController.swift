@@ -37,6 +37,7 @@ class TripExpenseCostViewController: UIViewController {
             destinationVC?.cost = cost
             destinationVC?.event = event
             destinationVC?.participantController = participantController
+            destinationVC?.tripController = tripController
 
 
         }
@@ -46,6 +47,7 @@ class TripExpenseCostViewController: UIViewController {
     var cost: Int = 0
     var event: String?
     var participantController: ParticipantController?
+    var tripController: TripController?
     @IBOutlet weak var tripCostTextField: UITextField!
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var enterCostLabel: UILabel!

@@ -23,6 +23,7 @@ class TripExpenseTableViewController: UITableViewController {
 
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         participantController = tabBar.participantsController
+        tripController = tabBar.tripController
 
         guard let participantController = participantController else { return }
         print("\(participantController.allParticipants)")
@@ -111,11 +112,14 @@ class TripExpenseTableViewController: UITableViewController {
             let destinationVC = segue.destination as! TripExpenseEventViewController
 //            guard let participantController = participantController else { return }
             destinationVC.participantController = participantController
+            destinationVC.tripController = tripController
         }
     }
 
 
  
     var participantController: ParticipantController?
+    var tripController: TripController?
+
 
 }

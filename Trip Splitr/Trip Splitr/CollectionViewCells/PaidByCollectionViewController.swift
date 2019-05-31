@@ -72,11 +72,17 @@ class PaidByCollectionViewController: UICollectionViewController {
             }
         })
 
-        
-
-
-    
         return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let participant = participantController?.allParticipants[indexPath.item]
+
+        let cell = collectionView.cellForItem(at: indexPath) as! PaidByCollectionViewCell
+        cell.paidLabel.isHidden = !cell.paidLabel.isHidden
+
+        
     }
 
     // MARK: UICollectionViewDelegate
@@ -110,6 +116,7 @@ class PaidByCollectionViewController: UICollectionViewController {
     }
     */
     var participantController: ParticipantController?
+    var tripController: TripController?
     var event: String?
     var cost: Int?
     var apiController = APIController()

@@ -27,6 +27,9 @@ class TripsTableViewController: UITableViewController {
 //            print("no")
 //        }
 //        }
+
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        tripController = tabBar.tripController
     }
 
 
@@ -61,8 +64,10 @@ class TripsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
+            guard let tripController = tripController else { return 1 }
             return tripController.activeTrips.count
         } else {
+            guard let tripController = tripController else { return  1}
             return tripController.pastTrips.count
         }
     }
@@ -71,6 +76,7 @@ class TripsTableViewController: UITableViewController {
 
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
+            guard let tripController = tripController else { return cell}
             let trip = tripController.activeTrips[indexPath.row]
 
             if trip.complete == false {
@@ -83,6 +89,7 @@ class TripsTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
+            guard let tripController = tripController else { return cell}
             let trip = tripController.pastTrips[indexPath.row]
 
             if trip.complete == true {
@@ -145,6 +152,7 @@ class TripsTableViewController: UITableViewController {
             let destinationVC = segue.destination as? TripDetailViewController
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             destinationVC?.tripController = tripController
+            guard let tripController = tripController else { return }
             destinationVC?.trip = tripController.activeTrips[indexPath.row]
         } else if segue.identifier == "LoginViewModalSegue" {
             let destinationVC = segue.destination as? LoginViewController
@@ -180,7 +188,7 @@ class TripsTableViewController: UITableViewController {
 //    }
 
     
-    var tripController = TripController()
+    var tripController: TripController?
     var apiController = APIController()
     var tripNames: [TripName] = [] 
 

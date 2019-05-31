@@ -19,7 +19,8 @@ struct Trip: Codable, Equatable {
     var baseCost: Int?
     var img: String?
     var expenses: [Expense]?
-    var userId: Int?
+    //var userId: Int?
+    var paidBy: String
     var complete: Bool
 }
 
