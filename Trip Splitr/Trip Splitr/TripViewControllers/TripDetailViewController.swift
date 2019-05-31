@@ -35,11 +35,7 @@ class TripDetailViewController: UIViewController {
         tripNameTextField.text = trip.name
         tripImageTextField.text = trip.img
 
-        //        let isoDate = trip.date
-        //        let dateFormatter = ISO8601DateFormatter()
-        //        let date = dateFormatter.date(from:isoDate)!
-        //
-        //        datePicker.date = date
+    
 
     }
 
@@ -58,11 +54,28 @@ class TripDetailViewController: UIViewController {
 
         } else {
 
-            tripController.createTrip(name: tripNameTextField.text ?? "", date: "\(datePicker.date)", img: tripImageTextField.text ?? "")
+            
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateStyle = DateFormatter.Style.short
+            let strDate = dateFormatter.string(from: datePicker.date)
+            
+            tripController.createTrip(name: tripNameTextField.text ?? "", date: strDate, img: tripImageTextField.text ?? "")
 
         self.dismiss(animated: true)
     }
     }
+    
+    
+    @IBAction func datePickerChanged(_ sender: Any) {
+        
+//        let dateFormatter = DateFormatter()
+//        
+//        dateFormatter.dateStyle = DateFormatter.Style.short
+//        let strDate = dateFormatter.string(from: datePicker.date)
+    }
+    
+    
 
     @IBOutlet weak var tripImageTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -71,6 +84,6 @@ class TripDetailViewController: UIViewController {
     var trip: Trip?
 
     
-
+   
 
 }
