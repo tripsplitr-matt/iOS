@@ -31,4 +31,7 @@ struct Participant: Codable, Equatable {
     var spent: Int
     var used: Int
 
+    static func ==(lhs: Participant, rhs: Participant) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

@@ -38,19 +38,19 @@ class TripController {
         
         
         
-        
-        //        for indexPath in 0..<(count) {
-        //            let used = ( cost / count )
-        //            let participant = usedBy[indexPath]
-        //            print(participant)
-        //            print(used)
-        //
-        //            let personIndex = activeTrips[currentTrip].participants?.firstIndex(of: participant)
-        //
-        //            activeTrips[currentTrip].participants?[personIndex ?? 0].used += used
-        //
-        //        }
-        
+
+                for indexPath in 0..<(count) {
+                    let used = ( cost / count )
+                    let participant = usedBy[indexPath]
+                    print(participant)
+                    print(used)
+
+                    let personIndex = activeTrips[currentTrip].participants?.firstIndex(of: participant)
+
+                    activeTrips[currentTrip].participants?[personIndex ?? 0].used += used
+
+                }
+
     }
     
     func createParticipant(name: String, img: String, currentTrip: Int) {
@@ -60,7 +60,7 @@ class TripController {
     }
     
     func updateParticipantSpent(paidBy: Participant, currentTrip: Int, expense: Expense){
-        
+
         let personIndex = activeTrips[currentTrip].participants?.firstIndex(of: paidBy)
         activeTrips[currentTrip].participants?[personIndex ?? 0].spent += expense.cost
         
