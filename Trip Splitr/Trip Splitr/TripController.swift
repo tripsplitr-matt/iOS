@@ -25,9 +25,16 @@ class TripController {
         let newExpense = Expense(event: event, cost: cost, paidBy: paidBy, usedBy: usedBy)
         activeTrips[currentTrip].expenses?.append(newExpense)
 
-
+        updateBaseCost(expense: newExpense, currentTrip: currentTrip)
     }
 
+    func updateBaseCost(expense: Expense, currentTrip: Int) {
+
+        guard let baseCost = activeTrips[currentTrip].baseCost else { return }
+        let newBaseCost = baseCost + expense.cost
+
+        activeTrips[currentTrip].baseCost = newBaseCost
+    }
 
 
     func createParticipant(name: String, img: String, currentTrip: Int) {
@@ -37,9 +44,10 @@ class TripController {
     }
 
 
+
     
 
-    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 345, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: true),Trip(name: "Iceland", date: "5/1/19", participants: [Participant(name: "Someone", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0),Participant(name: "Jon", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0), Participant(name: "Ryan", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0)], baseCost: 1200, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: false)]
+    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 0, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: true),Trip(name: "Iceland", date: "5/1/19", participants: [Participant(name: "Someone", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0),Participant(name: "Jon", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0), Participant(name: "Ryan", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0)], baseCost: 0, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: false)]
 
     var activeTrips: [Trip] = []
 

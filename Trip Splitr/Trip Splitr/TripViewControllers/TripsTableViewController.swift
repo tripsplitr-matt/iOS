@@ -119,7 +119,7 @@ class TripsTableViewController: UITableViewController {
                 cell.tripNameLabel.text = trip.name
                 cell.numberOfPeopleLabel.text = "\(trip.participants!.count) people"
                 cell.dateLabel.text = trip.date
-                cell.costLabel.text = "\(trip.baseCost ?? 0)"
+                cell.costLabel.text = "$\(trip.baseCost ?? 0)"
 
                 apiController.fetchImage(at: img, completion: { result in
                     if let image = try? result.get() {

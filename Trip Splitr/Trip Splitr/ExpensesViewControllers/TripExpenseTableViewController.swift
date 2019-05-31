@@ -25,10 +25,6 @@ class TripExpenseTableViewController: UITableViewController {
         participantController = tabBar.participantsController
         tripController = tabBar.tripController
         currentTrip = tabBar.currentTrip
-
-
-
-
         guard let currentTrip = currentTrip,
             let tripController = tripController else { return }
 
@@ -37,17 +33,73 @@ class TripExpenseTableViewController: UITableViewController {
 
     }
 
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
 
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0 {
+           return 1
+        } else {
+            guard let currentTrip = currentTrip,
+                let tripController = tripController,
+                let expenses = tripController.activeTrips[currentTrip].expenses else { return 1}
+
+
+            return expenses.count
+        }
     }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionsTotalCell", for: indexPath) as! TransactionsTotalTableViewCell
+            guard let tripController = tripController,
+                let currentTrip = currentTrip,
+                let expenses = tripController.activeTrips[currentTrip].expenses else { return cell}
+            let trip = tripController.activeTrips[currentTrip]
+
+            guard let total = trip.baseCost else { return cell }
+
+
+
+            cell.tripTotalLabel.text = "$\(total)"
+
+
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExpensesCell", for: indexPath) as! TransactionCellTableViewCell
+            guard let tripController = tripController,
+                let currentTrip = currentTrip,
+            let expenses = tripController.activeTrips[currentTrip].expenses else { return cell}
+
+
+            return cell
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+   
     
     
     private func style(cell: UITableViewCell) {

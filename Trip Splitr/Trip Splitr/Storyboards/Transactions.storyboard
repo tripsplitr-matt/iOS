@@ -59,7 +59,7 @@
                                     <outlet property="tripTotalLabel" destination="7xB-pl-q4u" id="4UV-9B-F0g"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="126" id="EBp-PA-vOk" customClass="TransactionCellTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpensesCell" rowHeight="126" id="EBp-PA-vOk" customClass="TransactionCellTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EBp-PA-vOk" id="6Cp-an-4q0">
