@@ -24,6 +24,8 @@
 		44786691229F1FF900FFA53E /* PeopleSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */; };
 		44786693229F263C00FFA53E /* PersonSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */; };
 		44786695229F267E00FFA53E /* PersonExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */; };
+		44B06F7022A0A68A003AAE89 /* PaidByCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B06F6F22A0A68A003AAE89 /* PaidByCollectionViewController.swift */; };
+		44B06F7222A0A699003AAE89 /* UsedByCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B06F7122A0A699003AAE89 /* UsedByCollectionViewController.swift */; };
 		44DF75DE229EEBF800AC0FBC /* TripExpenseCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */; };
 		44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */; };
 		44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */; };
@@ -68,6 +70,8 @@
 		44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSummaryTableViewController.swift; sourceTree = "<group>"; };
 		44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		44B06F6F22A0A68A003AAE89 /* PaidByCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidByCollectionViewController.swift; sourceTree = "<group>"; };
+		44B06F7122A0A699003AAE89 /* UsedByCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedByCollectionViewController.swift; sourceTree = "<group>"; };
 		44DF75DD229EEBF800AC0FBC /* TripExpenseCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseCostViewController.swift; path = ../TripExpenseCostViewController.swift; sourceTree = "<group>"; };
 		44DF75DF229EEC1300AC0FBC /* TripExpensePaidByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpensePaidByViewController.swift; path = ../TripExpensePaidByViewController.swift; sourceTree = "<group>"; };
 		44DF75E1229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripExpenseUsedByViewController.swift; path = ../TripExpenseUsedByViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 			children = (
 				4443745A22A05B6C00998466 /* PaidByCollectionViewCell.swift */,
 				4443745C22A05B7B00998466 /* UsedByCollectionViewCell.swift */,
+				44B06F6F22A0A68A003AAE89 /* PaidByCollectionViewController.swift */,
+				44B06F7122A0A699003AAE89 /* UsedByCollectionViewController.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -319,7 +325,9 @@
 				4431C369229D961900BA99B5 /* User.swift in Sources */,
 				44786688229F1C5100FFA53E /* PeopleAddNameViewController.swift in Sources */,
 				44786693229F263C00FFA53E /* PersonSummaryTableViewCell.swift in Sources */,
+				44B06F7022A0A68A003AAE89 /* PaidByCollectionViewController.swift in Sources */,
 				44425B2B229F3448006BC02C /* PersonListTableViewCell.swift in Sources */,
+				44B06F7222A0A699003AAE89 /* UsedByCollectionViewController.swift in Sources */,
 				D101FFB3229EF57A00D3A5A8 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

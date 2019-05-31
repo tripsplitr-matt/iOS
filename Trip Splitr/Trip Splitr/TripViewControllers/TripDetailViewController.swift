@@ -50,6 +50,7 @@ class TripDetailViewController: UIViewController {
         if let _ = trip {
             self.trip!.name = name
             self.trip!.img = img
+            
             self.dismiss(animated: true)
 
         } else {
