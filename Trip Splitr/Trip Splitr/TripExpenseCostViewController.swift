@@ -14,6 +14,12 @@ class TripExpenseCostViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
 
+        guard let currentTrip = currentTrip,
+            let tripController = tripController else { return }
+        print("in addcost currentTrip \(currentTrip)")
+        print(tripController.activeTrips[currentTrip])
+
+
         // Do any additional setup after loading the view.
     }
     private func setupViews() {
@@ -38,6 +44,7 @@ class TripExpenseCostViewController: UIViewController {
             destinationVC?.event = event
             destinationVC?.participantController = participantController
             destinationVC?.tripController = tripController
+            destinationVC?.currentTrip = currentTrip
 
 
         }

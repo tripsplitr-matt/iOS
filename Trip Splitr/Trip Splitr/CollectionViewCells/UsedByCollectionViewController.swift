@@ -15,73 +15,125 @@ class UsedByCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVeiws()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
-    func setupVeiws() {
-        collectionView.backgroundColor = AppearanceHelper.mediumBlue
-        
-    }
-    @IBAction func saveButtonPressed(_ sender: Any) {
-    }
-    
-    // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "UsedByHeader", for: indexPath) as! UsedByCollectionReusableView
+
+        guard let cost = cost,
+            let event = event,
+            let paidBy = paidBy else { return headerView }
+
+        headerView.eventLabel.text = event
+        headerView.costLabel.text = "$\(cost)"
+        headerView.paidByLabel.text = paidBy.name
+
+        return headerView
+
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return 1}
+        return participants.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UsedBy", for: indexPath) as! UsedByCollectionViewCell
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return cell}
+        let participant = participants[indexPath.item]
+
+        cell.nameLabel.text = participant.name
+
+        apiController.fetchImage(at: participant.img, completion: { result in
+            if let image = try? result.get() {
+                DispatchQueue.main.async {
+                    cell.usedByImageView.image = image
+                }
+            }
+        })
+
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return }
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+        let participant = participants[indexPath.item]
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! UsedByCollectionViewCell
+        cell.usedLabel.isHidden = !cell.usedLabel.isHidden
+        usedBy.append(participant)
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
+//    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        guard let tripController = tripController,
+//            let currentTrip = currentTrip,
+//            let participants = tripController.activeTrips[currentTrip].participants else { return }
+//
+//        let participant = participants[indexPath.item]
+//
+//        guard let removeIndex = usedBy.firstIndex(of: participant) else { return }
+//
+//        usedBy.remove(at: removeIndex)
+//
+//
+//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConfirmExpense" {
+            let destinationVC = segue.destination as? ConfirmExpenseViewController
+            destinationVC?.cost = cost
+            destinationVC?.event = event
+            destinationVC?.participantController = participantController
+            destinationVC?.tripController = tripController
+            destinationVC?.currentTrip = currentTrip
+            destinationVC?.paidBy = paidBy
+            destinationVC?.usedBy = usedBy
+
+            print(usedBy)
+            print(usedByString)
+            convertArray()
+            destinationVC?.usedByString = usedByString
+
+        }
     }
 
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
+
+    func convertArray() {
+        for participant in usedBy {
+            let name = participant.name
+            usedByString.append("\(name) ")
+        }
     }
-    */
 
 
+
+    func setupVeiws() {
+        collectionView.backgroundColor = AppearanceHelper.mediumBlue
+
+    }
+    var usedByString: String = ""
+    var usedBy: [Participant] = []
+    var paidBy: Participant?
+    var participantController: ParticipantController?
+    var tripController: TripController?
+    var event: String?
+    var cost: Int?
+    var apiController = APIController()
+    var currentTrip: Int?
 
 }

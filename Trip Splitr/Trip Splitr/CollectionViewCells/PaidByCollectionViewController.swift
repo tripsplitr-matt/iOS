@@ -19,19 +19,10 @@ class PaidByCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.allowsMultipleSelection = false
 
-        
+
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -78,11 +69,17 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let participant = participantController?.allParticipants[indexPath.item]
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return }
 
+        let participant = participants[indexPath.item]
+        paidBy = participant
         let cell = collectionView.cellForItem(at: indexPath) as! PaidByCollectionViewCell
+        print(indexPath)
         cell.paidLabel.isHidden = !cell.paidLabel.isHidden
-        }
+        print(participant.name)
+    }
 
 
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -94,11 +91,27 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     func setupVeiws() {
         collectionView.backgroundColor = AppearanceHelper.mediumBlue
-        
-    }
-    
 
-    var paidby: Participant?
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddUsedBy" {
+            let destinationVC = segue.destination as? UsedByCollectionViewController
+            destinationVC?.cost = cost
+            destinationVC?.event = event
+            destinationVC?.participantController = participantController
+            destinationVC?.tripController = tripController
+            destinationVC?.currentTrip = currentTrip
+            destinationVC?.paidBy = paidBy
+
+        }
+    }
+
+
+
+
+
+    var paidBy: Participant?
     var participantController: ParticipantController?
     var tripController: TripController?
     var event: String?

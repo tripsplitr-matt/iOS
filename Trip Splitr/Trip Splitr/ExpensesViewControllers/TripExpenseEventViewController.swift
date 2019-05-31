@@ -14,6 +14,11 @@ class TripExpenseEventViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         // Do any additional setup after loading the view.
+        guard let currentTrip = currentTrip,
+            let tripController = tripController else { return }
+        print("in addview currentTrip \(currentTrip)")
+        print(tripController.activeTrips[currentTrip])
+
     }
     private func setupViews() {
         view.backgroundColor = AppearanceHelper.lightBlue

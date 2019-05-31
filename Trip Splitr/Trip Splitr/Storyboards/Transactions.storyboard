@@ -297,9 +297,9 @@
                                     <constraint firstItem="RdV-hi-xdY" firstAttribute="top" secondItem="1wU-B5-iPt" secondAttribute="top" id="w2S-Ag-OiY"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="collectionImageView" destination="Vra-wR-rcq" id="UYm-EW-ex1"/>
-                                    <outlet property="nameLabel" destination="Q1J-xC-v5I" id="ge5-Uc-xYW"/>
-                                    <outlet property="paidLabel" destination="7xE-Nw-vbK" id="zdY-ry-qPy"/>
+                                    <outlet property="collectionImageView" destination="Vra-wR-rcq" id="5G4-WA-L1x"/>
+                                    <outlet property="nameLabel" destination="Q1J-xC-v5I" id="Z2P-ZB-grn"/>
+                                    <outlet property="paidLabel" destination="7xE-Nw-vbK" id="jW7-bJ-sFH"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -474,9 +474,10 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Used By" id="aIF-Nw-XhD">
-                        <barButtonItem key="rightBarButtonItem" title="Save Expense" id="AEq-vK-YQr">
+                        <barButtonItem key="rightBarButtonItem" title="Confirm Expense" id="AEq-vK-YQr">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="RV3-os-xnC" id="ifi-6X-vbm"/>
+                                <segue destination="tp9-RE-DeI" kind="show" identifier="ConfirmExpense" id="wrE-7K-eRx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -484,6 +485,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqu-9h-TPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3198.5507246376815" y="144.64285714285714"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="iIm-Sa-sds">
+            <objects>
+                <viewController id="tp9-RE-DeI" customClass="ConfirmExpenseViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1RR-Mn-ENk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20w-8H-wQs">
+                                <rect key="frame" x="103" y="146" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsM-ow-DZw">
+                                <rect key="frame" x="103" y="175" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PaidBy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzY-os-g0y">
+                                <rect key="frame" x="103" y="204" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UsedBy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNs-ZF-eCO">
+                                <rect key="frame" x="103" y="233" width="208" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="o0C-8f-9ag"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="pON-5x-Na9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1xl-LJ-M6A">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="tp9-RE-DeI" id="sof-6j-2vO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="costLabel" destination="ZsM-ow-DZw" id="Owj-n2-cLe"/>
+                        <outlet property="eventLabel" destination="20w-8H-wQs" id="IsS-JJ-MAc"/>
+                        <outlet property="paidByLabel" destination="rzY-os-g0y" id="8F9-tO-H1g"/>
+                        <outlet property="usedByLabel" destination="QNs-ZF-eCO" id="UQS-su-WKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qv6-vD-Rqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4053.6231884057975" y="144.64285714285714"/>
         </scene>
         <!--Paid By-->
         <scene sceneID="wfn-hb-MfF">
