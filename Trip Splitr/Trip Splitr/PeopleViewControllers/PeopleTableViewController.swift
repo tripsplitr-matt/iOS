@@ -31,19 +31,43 @@ class PeopleTableViewController: UITableViewController {
 //
 //
 //        }
+
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        participantController = tabBar.participantsController
+        tripController = tabBar.tripController
+        currentTrip = tabBar.currentTrip
+
+        guard let currentTrip = currentTrip else { return }
+        print(currentTrip)
 //
      tableView.reloadData()
 
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(true)
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+
+        guard let currentTrip = currentTrip else { return }
+        tabBar.currentTrip = currentTrip
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
-
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         participantController = tabBar.participantsController
+        tripController = tabBar.tripController
+        currentTrip = tabBar.currentTrip
+
+        guard let currentTrip = currentTrip else { return }
+        print(currentTrip)
+
+
     }
+
+
 
     // MARK: - Table view data source
 
@@ -51,15 +75,20 @@ class PeopleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let participantController = participantController else { return 1}
-        return participantController.allParticipants.count
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+        let participants = tripController.activeTrips[currentTrip].participants else { return 1}
+
+        return participants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonListTableViewCell
-        guard let participantController = participantController else { return cell}
-        let person = participantController.allParticipants[indexPath.row]
-        cell.personNameLabel.text = person.name
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return cell}
+
+        cell.personNameLabel.text = participants[indexPath.row].name
         style(cell: cell)
 
         return cell
@@ -87,16 +116,23 @@ class PeopleTableViewController: UITableViewController {
         if segue.identifier == "PeopleSummary" {
             let destinationVC = segue.destination as! PeopleSummaryTableViewController
             guard let indexPath = tableView.indexPathForSelectedRow,
-                let participantController = participantController else { return }
-
-            destinationVC.participant = participantController.allParticipants[indexPath.row]
+                let tripController = tripController,
+                let currentTrip = currentTrip,
+                let participants = tripController.activeTrips[currentTrip].participants else { return }
+            destinationVC.participant = participants[indexPath.row]
+            destinationVC.currentTrip = currentTrip
+            destinationVC.tripController = tripController
         } else if segue.identifier == "AddPeople" {
             let destinationVC = segue.destination as! PeopleAddNameViewController
             destinationVC.participantController = participantController
+            destinationVC.currentTrip = currentTrip
+            destinationVC.tripController = tripController
         }
 
     }
 
+    var currentTrip: Int?
+    var tripController: TripController?
     var participantController: ParticipantController?
     var apiController = APIController()
     var people: [User] = [] {

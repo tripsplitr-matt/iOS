@@ -18,26 +18,24 @@ class PeopleAddPhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
-        guard let text = addImgTextField.text else { return }
-        img = text
+        guard let img = addImgTextField.text,
+            let name = name,
+            let currentTrip = currentTrip else { return }
 
+        saveButton.isEnabled = true
         print(img)
         self.view.endEditing(true)
+        tripController?.createParticipant(name: name, img: img, currentTrip: currentTrip )
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
-        addPerson()
+
         navigationController?.popToRootViewController(animated: true)
-    }
-    func addPerson() {
-
-        guard let name = name,
-            let img = addImgTextField.text
-            else { return }
-       participantController?.createParticipant(name: name, img: img)
-        
 
     }
+
+
+
 
     private func setupViews() {
         
@@ -56,11 +54,14 @@ class PeopleAddPhotoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var addImgTextField: UITextField!
     @IBOutlet weak var addedNameLabel: UILabel!
 
     var img: String = ""
     var name: String?
     var participantController: ParticipantController?
+    var currentTrip: Int?
+    var tripController: TripController?
 
 }

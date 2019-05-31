@@ -28,10 +28,16 @@ class TripsTableViewController: UITableViewController {
 //        }
 //        }
 
-        let tabBar = tabBarController as! TripSplitrTabBarViewController
-        tripController = tabBar.tripController
-        currentTrip = tabBar.currentTrip
 
+        tableView.reloadData()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        guard let currentTrip = currentTrip else { return }
+        tabBar.currentTrip = currentTrip
     }
 
 
@@ -50,6 +56,12 @@ class TripsTableViewController: UITableViewController {
             }
         }
 
+
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        tripController = tabBar.tripController
+        currentTrip = tabBar.currentTrip
+        guard let currentTrip = currentTrip else { return }
+        print(currentTrip)
         setupAppearances()
         tableView.reloadData()
     }
@@ -137,10 +149,6 @@ class TripsTableViewController: UITableViewController {
         tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
 
     }
-
-
-
-
 
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

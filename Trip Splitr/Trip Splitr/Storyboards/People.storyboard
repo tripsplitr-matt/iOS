@@ -283,7 +283,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Name" id="HSY-hf-b7H">
-                        <barButtonItem key="rightBarButtonItem" title="Add Photo" id="usY-Rj-a91">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add Photo" id="usY-Rj-a91">
                             <connections>
                                 <segue destination="FTg-bW-Utc" kind="show" identifier="AddPersonPhoto" id="r9c-EK-OYV"/>
                             </connections>
@@ -292,6 +292,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNameTextField" destination="A9A-yI-zhN" id="ZE5-il-02G"/>
+                        <outlet property="addPhotoButton" destination="usY-Rj-a91" id="0HR-aN-Ova"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qis-P8-k5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +341,7 @@
                         <viewLayoutGuide key="safeArea" id="WWn-Wz-xUZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="JN9-J5-6Wh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iAg-W1-1D6">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="iAg-W1-1D6">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="FTg-bW-Utc" id="SwV-hd-X6s"/>
                             </connections>
@@ -349,6 +350,7 @@
                     <connections>
                         <outlet property="addImgTextField" destination="UbY-Wo-JkH" id="XiN-h6-Dr6"/>
                         <outlet property="addedNameLabel" destination="d4e-gn-3cQ" id="58R-o6-lkn"/>
+                        <outlet property="saveButton" destination="iAg-W1-1D6" id="RGv-mJ-w3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANY-xD-Kkd" userLabel="First Responder" sceneMemberID="firstResponder"/>

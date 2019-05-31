@@ -46,7 +46,8 @@ class TripDetailViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         guard let name = tripNameTextField.text,
             !name.isEmpty, let img = tripImageTextField.text,
-            !img.isEmpty
+            !img.isEmpty,
+            let tripController = tripController
             else { return }
 
         if let _ = trip {
@@ -57,7 +58,7 @@ class TripDetailViewController: UIViewController {
 
         } else {
 
-        tripController?.createTrip(name: tripNameTextField.text ?? "", date: "\(datePicker.date)", img: tripImageTextField.text ?? "")
+            tripController.createTrip(name: tripNameTextField.text ?? "", date: "\(datePicker.date)", img: tripImageTextField.text ?? "")
 
         self.dismiss(animated: true)
     }

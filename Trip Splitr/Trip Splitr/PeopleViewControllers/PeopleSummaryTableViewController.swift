@@ -76,5 +76,7 @@ class PeopleSummaryTableViewController: UITableViewController {
 
 
     var participant: Participant?
+    var tripController: TripController?
+    var currentTrip: Int?
 
 }

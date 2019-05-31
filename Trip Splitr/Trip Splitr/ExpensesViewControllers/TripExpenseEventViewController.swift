@@ -41,6 +41,7 @@ class TripExpenseEventViewController: UIViewController {
             destinationVC?.event = event
             destinationVC?.participantController = participantController
             destinationVC?.tripController = tripController
+            destinationVC?.currentTrip = currentTrip
         }
     }
 
@@ -49,4 +50,6 @@ class TripExpenseEventViewController: UIViewController {
     @IBOutlet weak var enterTripEventLabel: UILabel!
     var participantController: ParticipantController?
     var tripController: TripController?
+    var currentTrip: Int?
+    
 }

@@ -182,10 +182,10 @@
 		4478668F229F1DD600FFA53E /* PeopleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4478668D229F1CAB00FFA53E /* PeopleTableViewController.swift */,
 				44786687229F1C5100FFA53E /* PeopleAddNameViewController.swift */,
 				44786689229F1C6300FFA53E /* PeopleAddPhotoViewController.swift */,
 				44786690229F1FF900FFA53E /* PeopleSummaryTableViewController.swift */,
-				4478668D229F1CAB00FFA53E /* PeopleTableViewController.swift */,
 				44786692229F263C00FFA53E /* PersonSummaryTableViewCell.swift */,
 				44786694229F267E00FFA53E /* PersonExpenseTableViewCell.swift */,
 				44425B2A229F3448006BC02C /* PersonListTableViewCell.swift */,

@@ -13,6 +13,7 @@ class PeopleAddNameViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: Any) {
         self.view.endEditing(true)
         name = addNameTextField.text ?? ""
+        addPhotoButton.isEnabled = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +39,17 @@ class PeopleAddNameViewController: UIViewController {
             let destinationVC = segue.destination as? PeopleAddPhotoViewController
             destinationVC?.name = name
             destinationVC?.participantController = participantController
+            destinationVC?.currentTrip = currentTrip
+            destinationVC?.tripController = tripController
         }
     }
 
+    @IBOutlet weak var addPhotoButton: UIBarButtonItem!
     @IBOutlet weak var addNameTextField: UITextField!
     var name: String = " "
     var participantController: ParticipantController?
+    var tripController: TripController?
+    var currentTrip: Int?
     
     
 

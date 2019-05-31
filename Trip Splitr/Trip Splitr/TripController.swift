@@ -14,9 +14,11 @@ class TripController {
 
         let newTrip = Trip(name: name, date: date, participants: [], baseCost: 0, img: img, expenses: [], paidBy: "",  complete: false)
 
-        allTrips.append(newTrip)
+        activeTrips.append(newTrip)
 
     }
+
+    
 
 //    func createPerson(name: String, img: String
 //        let newPerson = 
@@ -24,13 +26,26 @@ class TripController {
 //    
 //    )
 
-    
+    func createParticipant(name: String, img: String, currentTrip: Int) {
+
+        let participant = Participant(name: name, img: img, spent: 0, used: 0)
+
+        activeTrips[currentTrip].participants?.append(participant)
+
+
+    }
 
     
 
-    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 345, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: true),Trip(name: "Iceland", date: "5/1/19", participants: [], baseCost: 1200, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: true)]
+    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 345, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: false),Trip(name: "Iceland", date: "5/1/19", participants: [Participant(name: "Someone", img: "asdfsdf", spent: 0, used: 0)], baseCost: 1200, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: false)]
 
-    var activeTrips: [Trip] {
+    var activeTrips: [Trip] = []
+
+    init() {
+        activeTrips = liveTrips
+    }
+
+    var liveTrips: [Trip] {
         var trips: [Trip] = []
         for trip in allTrips {
             if trip.complete == false {
@@ -39,6 +54,9 @@ class TripController {
         }
         return trips
     }
+
+
+    
     var pastTrips: [Trip] {
         var trips: [Trip] = []
         for trip in allTrips {

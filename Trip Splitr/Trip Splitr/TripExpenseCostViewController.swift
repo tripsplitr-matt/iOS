@@ -48,6 +48,7 @@ class TripExpenseCostViewController: UIViewController {
     var event: String?
     var participantController: ParticipantController?
     var tripController: TripController?
+    var currentTrip: Int?
     @IBOutlet weak var tripCostTextField: UITextField!
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var enterCostLabel: UILabel!
