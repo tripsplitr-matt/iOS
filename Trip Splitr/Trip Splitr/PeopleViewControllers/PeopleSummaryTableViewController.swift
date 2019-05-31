@@ -44,6 +44,16 @@ class PeopleSummaryTableViewController: UITableViewController {
             cell.nameLabel.text = participant.name
             cell.spentLabel.text = "$\(participant.spent)"
             cell.usedLabel.text = "$\(participant.used)"
+
+            apiController.fetchImage(at: participant.img, completion: { result in
+                if let image = try? result.get() {
+                    DispatchQueue.main.async {
+                        cell.personImageView.image = image
+                    }
+                }
+            })
+
+
             style(cell: cell)
             return cell
         } else {
@@ -74,7 +84,7 @@ class PeopleSummaryTableViewController: UITableViewController {
 
 
 
-
+    var apiController = APIController()
     var participant: Participant?
     var tripController: TripController?
     var currentTrip: Int?

@@ -90,6 +90,7 @@
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="leading" secondItem="PK5-vd-pbx" secondAttribute="leading" id="FbY-3j-WAb"/>
                                                 <constraint firstItem="PK5-vd-pbx" firstAttribute="top" secondItem="Xwh-SX-yYo" secondAttribute="top" constant="-1" id="TwG-88-KMi"/>
                                                 <constraint firstItem="PK5-vd-pbx" firstAttribute="leading" secondItem="Xwh-SX-yYo" secondAttribute="leading" id="Uxy-5I-mnJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ydf-Vw-rR6" secondAttribute="trailing" constant="65" id="Xoo-F4-RsJ"/>
                                                 <constraint firstItem="Ydf-Vw-rR6" firstAttribute="leading" secondItem="PK5-vd-pbx" secondAttribute="trailing" constant="24" id="ZJh-de-6x9"/>
                                                 <constraint firstItem="lge-AG-nFt" firstAttribute="top" secondItem="Ydf-Vw-rR6" secondAttribute="bottom" constant="8" symbolic="YES" id="eWn-WC-OLy"/>
                                                 <constraint firstItem="Ydf-Vw-rR6" firstAttribute="top" secondItem="Xwh-SX-yYo" secondAttribute="top" constant="1" id="ewV-4M-F9k"/>
@@ -103,6 +104,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="Xwh-SX-yYo" secondAttribute="bottom" constant="16" id="Na1-Le-3CQ"/>
                                         <constraint firstItem="Xwh-SX-yYo" firstAttribute="leading" secondItem="YyE-F0-rx1" secondAttribute="leadingMargin" constant="20" id="Nvo-zL-w40"/>
                                         <constraint firstItem="Xwh-SX-yYo" firstAttribute="top" secondItem="YyE-F0-rx1" secondAttribute="topMargin" constant="16" id="THl-mj-AeL"/>
+                                        <constraint firstItem="PK5-vd-pbx" firstAttribute="leading" secondItem="YyE-F0-rx1" secondAttribute="leading" constant="40" id="veV-x7-tRo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -171,7 +173,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="Dwh-Vf-nqU" id="hHf-rw-KWm"/>
-                                    <outlet property="tripImageView" destination="kn5-UY-8oo" id="oFD-j6-eJf"/>
+                                    <outlet property="tripImageView" destination="kn5-UY-8oo" id="Lp2-us-2HD"/>
                                     <outlet property="tripNameLabel" destination="vOM-xl-e74" id="6G8-0V-b2E"/>
                                 </connections>
                             </tableViewCell>

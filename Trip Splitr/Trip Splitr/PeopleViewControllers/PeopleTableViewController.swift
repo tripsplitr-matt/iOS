@@ -89,6 +89,16 @@ class PeopleTableViewController: UITableViewController {
             let participants = tripController.activeTrips[currentTrip].participants else { return cell}
 
         cell.personNameLabel.text = participants[indexPath.row].name
+
+        apiController.fetchImage(at: participants[indexPath.row].img, completion: { result in
+            if let image = try? result.get() {
+                DispatchQueue.main.async {
+                    cell.personImageView.image = image
+                }
+            }
+        })
+
+
         style(cell: cell)
 
         return cell

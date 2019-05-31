@@ -30,6 +30,7 @@ class PersonListTableViewCell: UITableViewCell {
     }
 
     @IBOutlet weak var personNameLabel: UILabel!
-    @IBOutlet weak var personImageView: UIView!
-   
+    
+    @IBOutlet weak var personImageView: UIImageView!
+
 }

@@ -68,7 +68,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="personImageView" destination="yF4-eg-4hG" id="2TS-Lz-zj8"/>
+                                    <outlet property="personImageView" destination="yF4-eg-4hG" id="s1x-0J-YFx"/>
                                     <outlet property="personNameLabel" destination="1wx-8T-6Ul" id="HjG-tE-CRd"/>
                                     <segue destination="4ze-kt-Hkk" kind="show" identifier="PeopleSummary" id="KWt-17-fas"/>
                                 </connections>

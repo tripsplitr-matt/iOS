@@ -19,6 +19,7 @@ class PaidByCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.allowsMultipleSelection = false
 
+        
 
     }
 
@@ -43,8 +44,6 @@ class PaidByCollectionViewController: UICollectionViewController {
         headerView.eventLabel.text = event
         headerView.costLabel.text = "$\(cost)"
 
-        
-
         return headerView
 
     }
@@ -52,14 +51,18 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        guard let participantController = participantController else { return 1}
-        return participantController.allParticipants.count
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return 1}
+        return participants.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PaidBy", for: indexPath) as! PaidByCollectionViewCell
-        guard let particapantController = participantController else { return cell}
-        let participant = particapantController.allParticipants[indexPath.item]
+        guard let tripController = tripController,
+            let currentTrip = currentTrip,
+            let participants = tripController.activeTrips[currentTrip].participants else { return cell}
+        let participant = participants[indexPath.item]
         cell.nameLabel.text = participant.name
 
         apiController.fetchImage(at: participant.img, completion: { result in
@@ -92,7 +95,7 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     
 
-
+    var paidby: Participant?
     var participantController: ParticipantController?
     var tripController: TripController?
     var event: String?

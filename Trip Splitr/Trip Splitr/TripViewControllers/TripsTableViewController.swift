@@ -111,13 +111,24 @@ class TripsTableViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
             guard let tripController = tripController else { return cell}
-            let trip = tripController.activeTrips[indexPath.row]
+             let trip = tripController.activeTrips[indexPath.row]
+            guard let img = trip.img else { return cell }
+
 
             if trip.complete == false {
                 cell.tripNameLabel.text = trip.name
                 cell.numberOfPeopleLabel.text = "\(trip.participants!.count) people"
                 cell.dateLabel.text = trip.date
                 cell.costLabel.text = "\(trip.baseCost ?? 0)"
+
+                apiController.fetchImage(at: img, completion: { result in
+                    if let image = try? result.get() {
+                        DispatchQueue.main.async {
+                            cell.tripImageView.image = image
+                        }
+                    }
+                })
+
                 style(cell: cell)
             }
             return cell
@@ -125,10 +136,19 @@ class TripsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
             guard let tripController = tripController else { return cell}
             let trip = tripController.pastTrips[indexPath.row]
-
+            guard let img = trip.img else { return cell }
             if trip.complete == true {
                 cell.dateLabel.text = trip.date
                 cell.tripNameLabel.text = trip.name
+
+                apiController.fetchImage(at: img, completion: { result in
+                    if let image = try? result.get() {
+                        DispatchQueue.main.async {
+                            cell.tripImageView.image = image
+                        }
+                    }
+                })
+
                 style(cell: cell)
             }
             return cell
