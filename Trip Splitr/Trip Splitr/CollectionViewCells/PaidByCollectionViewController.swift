@@ -15,13 +15,11 @@ class PaidByCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.allowsMultipleSelection = false
 
-        // Do any additional setup after loading the view.
+
     }
 
     /*
@@ -81,8 +79,14 @@ class PaidByCollectionViewController: UICollectionViewController {
 
         let cell = collectionView.cellForItem(at: indexPath) as! PaidByCollectionViewCell
         cell.paidLabel.isHidden = !cell.paidLabel.isHidden
+        }
 
-        
+
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+
+
+        let cell = collectionView.cellForItem(at: indexPath) as! PaidByCollectionViewCell
+        cell.paidLabel.isHidden = !cell.paidLabel.isHidden
     }
 
     // MARK: UICollectionViewDelegate
