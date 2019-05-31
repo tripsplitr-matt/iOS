@@ -37,6 +37,11 @@ class UsedByCollectionViewController: UICollectionViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        usedByString = ""
+    }
+
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -76,7 +81,15 @@ class UsedByCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.cellForItem(at: indexPath) as! UsedByCollectionViewCell
         cell.usedLabel.isHidden = !cell.usedLabel.isHidden
-        usedBy.append(participant)
+
+
+
+        if usedBy.contains(participant) {
+            guard let usedByIndex = usedBy.firstIndex(of: participant) else { return }
+            usedBy.remove(at: usedByIndex)
+        } else {
+            usedBy.append(participant) }
+        print(usedBy)
     }
 
 //    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

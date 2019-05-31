@@ -529,7 +529,7 @@
                     <navigationItem key="navigationItem" title="Title" id="pON-5x-Na9">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="1xl-LJ-M6A">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="tp9-RE-DeI" id="sof-6j-2vO"/>
+                                <action selector="saveButtonPressed:" destination="tp9-RE-DeI" id="RE7-eA-bKB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

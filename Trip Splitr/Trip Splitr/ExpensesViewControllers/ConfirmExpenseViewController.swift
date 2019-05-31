@@ -22,16 +22,30 @@ class ConfirmExpenseViewController: UIViewController {
         setUpViews()
     }
 
-    @IBAction func saveButtonPressed(_ sender: Any) {
+    override func viewWillDisappear(_ animated: Bool) {
+        usedByString = ""
+        usedByLabel.text = ""
     }
 
-    func setUpViews() {
+    @IBAction func saveButtonPressed(_ sender: Any) {
         guard let paidBy = paidBy,
-            let participantController = participantController,
             let tripController = tripController,
             let event = event,
             let cost = cost,
             let currentTrip = currentTrip else { return }
+
+        tripController.createExpense(event: event, cost: cost, paidBy: paidBy, usedBy: usedBy, currentTrip: currentTrip)
+
+
+        navigationController?.popToRootViewController(animated: true)
+
+
+    }
+
+    func setUpViews() {
+        guard let paidBy = paidBy,
+            let event = event,
+            let cost = cost else { return }
         
         usedByLabel.text = usedByString
 

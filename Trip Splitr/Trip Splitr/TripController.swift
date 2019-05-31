@@ -16,23 +16,26 @@ class TripController {
 
         activeTrips.append(newTrip)
 
+
     }
 
-    
+    func createExpense(event: String, cost: Int, paidBy: Participant, usedBy: [Participant], currentTrip: Int) {
 
-//    func createPerson(name: String, img: String
-//        let newPerson = 
-//    
-//    
-//    )
+
+        let newExpense = Expense(event: event, cost: cost, paidBy: paidBy, usedBy: usedBy)
+        activeTrips[currentTrip].expenses?.append(newExpense)
+
+
+    }
+
+
 
     func createParticipant(name: String, img: String, currentTrip: Int) {
 
         let participant = Participant(name: name, img: img, spent: 0, used: 0)
         activeTrips[currentTrip].participants?.append(participant)
-
-
     }
+
 
     
 
