@@ -21,6 +21,7 @@ class TripController {
         activeTrips[currentTrip].expenses?.append(newExpense)
 
         updateBaseCost(expense: newExpense, currentTrip: currentTrip)
+        updateParticipant(paidBy: paidBy, currentTrip: currentTrip, expense: newExpense)
     }
 
     func updateBaseCost(expense: Expense, currentTrip: Int) {
@@ -28,6 +29,8 @@ class TripController {
         guard let baseCost = activeTrips[currentTrip].baseCost else { return }
         let newBaseCost = baseCost + expense.cost
         activeTrips[currentTrip].baseCost = newBaseCost
+
+
     }
 
 
@@ -37,8 +40,13 @@ class TripController {
         activeTrips[currentTrip].participants?.append(participant)
     }
 
-    func updateParticipant(participant: Participant, currentTrip: Int){
-        
+    func updateParticipant(paidBy: Participant, currentTrip: Int, expense: Expense){
+
+        let personIndex = activeTrips[currentTrip].participants?.firstIndex(of: paidBy)
+         activeTrips[currentTrip].participants?[personIndex ?? 0].spent += expense.cost
+
+
+
     }
 
 

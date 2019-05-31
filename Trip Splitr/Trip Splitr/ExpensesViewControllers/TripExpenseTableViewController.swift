@@ -80,14 +80,19 @@ class TripExpenseTableViewController: UITableViewController {
             let expenses = tripController.activeTrips[currentTrip].expenses else { return cell}
             let usedBy = expenses[indexPath.row].usedBy
             let paidByName = expenses[indexPath.row].paidBy.name
-
-            let usedByString = "\(paidByName) split with \(usedBy.count - 1) people"
+            var usedByString = ""
+            if usedBy.count == 2 {
+            usedByString = "\(paidByName) split with \(usedBy.count - 1) person"
+            } else {
+                usedByString = "\(paidByName) split with \(usedBy.count - 1) people"
+            }
 
 
 
             cell.transactionNameLabel.text = expenses[indexPath.row].event
             cell.peopleLabel.text = usedByString
-            cell.priceLabel.text = "\(expenses[indexPath.row].cost)"
+            cell.priceLabel.text = "$\(expenses[indexPath.row].cost)"
+            cell.priceLabel.textColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
             
             return cell
 
