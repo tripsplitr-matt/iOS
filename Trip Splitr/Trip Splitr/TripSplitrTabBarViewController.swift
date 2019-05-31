@@ -15,7 +15,7 @@ class TripSplitrTabBarViewController: UITabBarController {
 
     var tripController = TripController()
 
-    var currentTrip: String = ""
+    var currentTrip: Int = 0
     
 
 

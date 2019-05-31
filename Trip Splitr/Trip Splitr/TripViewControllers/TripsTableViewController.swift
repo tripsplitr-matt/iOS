@@ -30,6 +30,7 @@ class TripsTableViewController: UITableViewController {
 
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         tripController = tabBar.tripController
+        currentTrip = tabBar.currentTrip
 
     }
 
@@ -60,7 +61,9 @@ class TripsTableViewController: UITableViewController {
         if indexPath.section == 0 {
         let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
         cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        currentTrip = indexPath.row
         }
+        print(currentTrip)
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -206,7 +209,7 @@ class TripsTableViewController: UITableViewController {
 //
 //    }
 
-    
+    var currentTrip: Int?
     var tripController: TripController?
     var apiController = APIController()
     var tripNames: [TripName] = [] 
