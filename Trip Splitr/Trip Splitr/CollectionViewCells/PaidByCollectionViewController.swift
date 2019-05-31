@@ -14,7 +14,7 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupVeiws()
 
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.allowsMultipleSelection = false
@@ -92,7 +92,10 @@ class PaidByCollectionViewController: UICollectionViewController {
         cell.paidLabel.isHidden = !cell.paidLabel.isHidden
     }
 
-
+    func setupVeiws() {
+        collectionView.backgroundColor = AppearanceHelper.mediumBlue
+        
+    }
     
 
     var paidby: Participant?

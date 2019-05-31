@@ -14,7 +14,7 @@ class UsedByCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupVeiws()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,7 +23,10 @@ class UsedByCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    func setupVeiws() {
+        collectionView.backgroundColor = AppearanceHelper.mediumBlue
+        
+    }
     @IBAction func saveButtonPressed(_ sender: Any) {
     }
     

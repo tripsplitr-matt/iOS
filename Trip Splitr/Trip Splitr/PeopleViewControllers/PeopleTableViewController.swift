@@ -55,7 +55,7 @@ class PeopleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         participantController = tabBar.participantsController
         tripController = tabBar.tripController
@@ -63,11 +63,12 @@ class PeopleTableViewController: UITableViewController {
 
         guard let currentTrip = currentTrip else { return }
         print(currentTrip)
-
+        
 
     }
 
 
+    
 
     // MARK: - Table view data source
 
@@ -89,7 +90,7 @@ class PeopleTableViewController: UITableViewController {
             let participants = tripController.activeTrips[currentTrip].participants else { return cell}
 
         cell.personNameLabel.text = participants[indexPath.row].name
-
+        style(cell: cell)
         apiController.fetchImage(at: participants[indexPath.row].img, completion: { result in
             if let image = try? result.get() {
                 DispatchQueue.main.async {
@@ -99,7 +100,7 @@ class PeopleTableViewController: UITableViewController {
         })
 
 
-        style(cell: cell)
+        
 
         return cell
     }
