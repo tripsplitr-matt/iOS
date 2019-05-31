@@ -14,6 +14,8 @@ class TripSplitrTabBarViewController: UITabBarController {
     var participantsController = ParticipantController()
 
     var tripController = TripController()
+
+    var currentTrip: String = ""
     
 
 

@@ -30,6 +30,7 @@ class TripsTableViewController: UITableViewController {
 
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         tripController = tabBar.tripController
+
     }
 
 
@@ -50,6 +51,24 @@ class TripsTableViewController: UITableViewController {
 
         setupAppearances()
         tableView.reloadData()
+    }
+
+
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if indexPath.section == 0 {
+        let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
+        cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        if indexPath.section == 0 {
+            let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
+            cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        }
     }
 
     // MARK: - Table view data source

@@ -76,6 +76,13 @@
                                                         <action selector="endTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="U5r-57-BfB"/>
                                                     </connections>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-ab-rAa">
+                                                    <rect key="frame" x="304" y="8" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="W98-1R-UrY"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -101,11 +108,11 @@
                                 <connections>
                                     <outlet property="costLabel" destination="tdn-t2-324" id="qAb-qK-ahd"/>
                                     <outlet property="dateLabel" destination="kxr-fH-xIQ" id="0nJ-cd-Zie"/>
+                                    <outlet property="editTripButton" destination="0EB-ab-rAa" id="IWc-xb-vBf"/>
                                     <outlet property="endTripButton" destination="lge-AG-nFt" id="U03-qN-58g"/>
                                     <outlet property="numberOfPeopleLabel" destination="xtV-0c-hke" id="ZcI-EC-KbP"/>
                                     <outlet property="tripImageView" destination="PK5-vd-pbx" id="xLz-H8-uf1"/>
                                     <outlet property="tripNameLabel" destination="D3g-I0-r5A" id="xS5-vy-SOS"/>
-                                    <segue destination="zzq-T5-pfl" kind="presentation" identifier="EditTrip" id="Vl6-0c-iNI"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastTripCell" rowHeight="205" id="1mr-DB-AGV" customClass="PastTripTableViewCell" customModule="Trip_Splitr" customModuleProvider="target">
@@ -351,6 +358,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vl6-0c-iNI"/>
+        <segue reference="W98-1R-UrY"/>
     </inferredMetricsTieBreakers>
 </document>
