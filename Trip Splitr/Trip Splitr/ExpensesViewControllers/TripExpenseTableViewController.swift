@@ -21,6 +21,12 @@ class TripExpenseTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        participantController = tabBar.participantsController
+
+        guard let participantController = participantController else { return }
+        print("\(participantController.allParticipants)")
+        participantController.createParticipant(name: "Jon", img: "image")
 
     }
 
@@ -96,17 +102,20 @@ class TripExpenseTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddEvent" {
+            let destinationVC = segue.destination as! TripExpenseEventViewController
+//            guard let participantController = participantController else { return }
+            destinationVC.participantController = participantController
+        }
     }
-    */
+
 
  
-
+    var participantController: ParticipantController?
 
 }

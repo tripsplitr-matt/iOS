@@ -235,13 +235,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7YG-v1-svs">
                             <size key="itemSize" width="140" height="180"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="0.0" height="114"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="20" minY="16" maxX="20" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PaidBy" id="1wU-B5-iPt" customClass="PaidByCollectionViewCell" customModule="Trip_Splitr" customModuleProvider="target">
-                                <rect key="frame" x="20" y="16" width="140" height="180"/>
+                                <rect key="frame" x="20" y="130" width="140" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
@@ -298,6 +298,37 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PaidByHeader" id="jG7-LG-txZ" customClass="PaidByCollectionReusableView" customModule="Trip_Splitr" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlZ-lv-M56">
+                                    <rect key="frame" x="57" y="18" width="175" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxS-dF-3ks">
+                                    <rect key="frame" x="57" y="63" width="175" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="XxS-dF-3ks" secondAttribute="trailing" constant="182" id="49B-CU-xmL"/>
+                                <constraint firstItem="XxS-dF-3ks" firstAttribute="top" secondItem="hlZ-lv-M56" secondAttribute="bottom" constant="24.5" id="6Fo-aY-FcA"/>
+                                <constraint firstItem="hlZ-lv-M56" firstAttribute="leading" secondItem="jG7-LG-txZ" secondAttribute="leading" constant="57" id="8ia-59-uAS"/>
+                                <constraint firstItem="hlZ-lv-M56" firstAttribute="top" secondItem="jG7-LG-txZ" secondAttribute="top" constant="18" id="B6d-xG-vSg"/>
+                                <constraint firstItem="XxS-dF-3ks" firstAttribute="leading" secondItem="jG7-LG-txZ" secondAttribute="leading" constant="57" id="Po0-l7-GCa"/>
+                                <constraint firstAttribute="bottom" secondItem="XxS-dF-3ks" secondAttribute="bottom" constant="30.5" id="VO2-Fb-2bX"/>
+                                <constraint firstAttribute="trailing" secondItem="hlZ-lv-M56" secondAttribute="trailing" constant="182" id="bJf-rt-ECF"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="costLabel" destination="XxS-dF-3ks" id="c2J-nq-JXq"/>
+                                <outlet property="eventLabel" destination="hlZ-lv-M56" id="XLO-fa-G9A"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="9EG-zI-744" id="APZ-Fa-FA1"/>
                             <outlet property="delegate" destination="9EG-zI-744" id="HLg-2h-jpU"/>
@@ -313,7 +344,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpL-bR-E5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="146"/>
+            <point key="canvasLocation" x="2320" y="143"/>
         </scene>
         <!--Used By-->
         <scene sceneID="h3b-jW-beV">

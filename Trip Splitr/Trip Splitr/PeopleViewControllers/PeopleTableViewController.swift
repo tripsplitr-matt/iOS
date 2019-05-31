@@ -41,8 +41,8 @@ class PeopleTableViewController: UITableViewController {
 
         setupViews()
 
-
-
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        participantController = tabBar.participantsController
     }
 
     // MARK: - Table view data source
@@ -51,11 +51,13 @@ class PeopleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        guard let participantController = participantController else { return 1}
         return participantController.allParticipants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonListTableViewCell
+        guard let participantController = participantController else { return cell}
         let person = participantController.allParticipants[indexPath.row]
         cell.personNameLabel.text = person.name
         style(cell: cell)
@@ -84,7 +86,9 @@ class PeopleTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PeopleSummary" {
             let destinationVC = segue.destination as! PeopleSummaryTableViewController
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let participantController = participantController else { return }
+
             destinationVC.participant = participantController.allParticipants[indexPath.row]
         } else if segue.identifier == "AddPeople" {
             let destinationVC = segue.destination as! PeopleAddNameViewController
@@ -93,7 +97,7 @@ class PeopleTableViewController: UITableViewController {
 
     }
 
-    var participantController = ParticipantController()
+    var participantController: ParticipantController?
     var apiController = APIController()
     var people: [User] = [] {
         didSet {

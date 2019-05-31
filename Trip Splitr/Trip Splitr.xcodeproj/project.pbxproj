@@ -44,6 +44,8 @@
 		D140C95222A03DD800954050 /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95122A03DD800954050 /* ExpenseController.swift */; };
 		D140C95422A073BB00954050 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95322A073BB00954050 /* Register.swift */; };
 		D140C95622A0A99900954050 /* ParticipantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95522A0A99900954050 /* ParticipantController.swift */; };
+		D140C95922A0D32D00954050 /* TripSplitrTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95822A0D32D00954050 /* TripSplitrTabBarViewController.swift */; };
+		D140C95B22A0DD5000954050 /* PaidByCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95A22A0DD5000954050 /* PaidByCollectionReusableView.swift */; };
 		D16E58A8229D9959005ED951 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A7229D9959005ED951 /* Trips.storyboard */; };
 		D16E58AA229D9973005ED951 /* People.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A9229D9973005ED951 /* People.storyboard */; };
 		D16E58AC229D9986005ED951 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58AB229D9986005ED951 /* Transactions.storyboard */; };
@@ -91,6 +93,8 @@
 		D140C95122A03DD800954050 /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
 		D140C95322A073BB00954050 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		D140C95522A0A99900954050 /* ParticipantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantController.swift; sourceTree = "<group>"; };
+		D140C95822A0D32D00954050 /* TripSplitrTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSplitrTabBarViewController.swift; sourceTree = "<group>"; };
+		D140C95A22A0DD5000954050 /* PaidByCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidByCollectionReusableView.swift; sourceTree = "<group>"; };
 		D16E58A7229D9959005ED951 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		D16E58A9229D9973005ED951 /* People.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = People.storyboard; sourceTree = "<group>"; };
 		D16E58AB229D9986005ED951 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				D140C95122A03DD800954050 /* ExpenseController.swift */,
 				D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */,
 				D140C95522A0A99900954050 /* ParticipantController.swift */,
+				D140C95822A0D32D00954050 /* TripSplitrTabBarViewController.swift */,
 				4443745E22A05BC700998466 /* CollectionViewCells */,
 				4478668F229F1DD600FFA53E /* PeopleViewControllers */,
 				44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */,
@@ -169,6 +174,7 @@
 				4443745C22A05B7B00998466 /* UsedByCollectionViewCell.swift */,
 				44B06F6F22A0A68A003AAE89 /* PaidByCollectionViewController.swift */,
 				44B06F7122A0A699003AAE89 /* UsedByCollectionViewController.swift */,
+				D140C95A22A0DD5000954050 /* PaidByCollectionReusableView.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -317,11 +323,13 @@
 				D140C95622A0A99900954050 /* ParticipantController.swift in Sources */,
 				44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,
+				D140C95B22A0DD5000954050 /* PaidByCollectionReusableView.swift in Sources */,
 				D140C95022A03D5E00954050 /* Expense.swift in Sources */,
 				D101FFBB229F13DA00D3A5A8 /* TransactionsTotalTableViewCell.swift in Sources */,
 				4478668E229F1CAB00FFA53E /* PeopleTableViewController.swift in Sources */,
 				D101FFC4229F649500D3A5A8 /* TripName.swift in Sources */,
 				44DF75E2229EEC3F00AC0FBC /* TripExpenseUsedByViewController.swift in Sources */,
+				D140C95922A0D32D00954050 /* TripSplitrTabBarViewController.swift in Sources */,
 				D16E58B2229DCD7E005ED951 /* TripsTableViewController.swift in Sources */,
 				D101FFB9229F134200D3A5A8 /* TripExpenseTableViewController.swift in Sources */,
 				44786695229F267E00FFA53E /* PersonExpenseTableViewCell.swift in Sources */,
@@ -479,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2KHAE3YT5;
 				INFOPLIST_FILE = "Trip Splitr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F2KHAE3YT5;
 				INFOPLIST_FILE = "Trip Splitr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

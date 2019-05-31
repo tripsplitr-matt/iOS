@@ -36,21 +36,45 @@ class PaidByCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PaidByHeader", for: indexPath) as! PaidByCollectionReusableView
+
+        guard let cost = cost,
+            let event = event else { return headerView }
+
+        headerView.eventLabel.text = event
+        headerView.costLabel.text = "$\(cost)"
+
+        
+
+        return headerView
+
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        guard let participantController = participantController else { return 1}
+        return participantController.allParticipants.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PaidBy", for: indexPath) as! PaidByCollectionViewCell
+        guard let particapantController = participantController else { return cell}
+        let participant = particapantController.allParticipants[indexPath.item]
+        cell.nameLabel.text = participant.name
+
+        apiController.fetchImage(at: participant.img, completion: { result in
+            if let image = try? result.get() {
+                DispatchQueue.main.async {
+                    cell.collectionImageView.image = image
+                }
+            }
+        })
+
+        
+
+
     
         return cell
     }
@@ -85,5 +109,9 @@ class PaidByCollectionViewController: UICollectionViewController {
     
     }
     */
+    var participantController: ParticipantController?
+    var event: String?
+    var cost: Int?
+    var apiController = APIController()
 
 }

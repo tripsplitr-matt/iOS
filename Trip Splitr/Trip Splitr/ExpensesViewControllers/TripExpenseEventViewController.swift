@@ -39,10 +39,12 @@ class TripExpenseEventViewController: UIViewController {
         if segue.identifier == "AddCost" {
             let destinationVC = segue.destination as? TripExpenseCostViewController
             destinationVC?.event = event
+            destinationVC?.participantController = participantController
         }
     }
 
     var event: String = "..."
     @IBOutlet weak var tripEventTextField: UITextField!
     @IBOutlet weak var enterTripEventLabel: UILabel!
+    var participantController: ParticipantController?
 }

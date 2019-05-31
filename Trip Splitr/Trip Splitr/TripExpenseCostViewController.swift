@@ -33,9 +33,10 @@ class TripExpenseCostViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPaidBy" {
-            let destinationVC = segue.destination as? TripExpensePaidByViewController
+            let destinationVC = segue.destination as? PaidByCollectionViewController
             destinationVC?.cost = cost
             destinationVC?.event = event
+            destinationVC?.participantController = participantController
 
 
         }
@@ -44,6 +45,7 @@ class TripExpenseCostViewController: UIViewController {
 
     var cost: Int = 0
     var event: String?
+    var participantController: ParticipantController?
     @IBOutlet weak var tripCostTextField: UITextField!
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var enterCostLabel: UILabel!
