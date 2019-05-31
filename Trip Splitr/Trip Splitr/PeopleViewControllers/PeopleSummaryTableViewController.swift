@@ -71,7 +71,7 @@ class PeopleSummaryTableViewController: UITableViewController {
             }
             
             
-            
+            style(cell: cell)
             
             
             return cell
