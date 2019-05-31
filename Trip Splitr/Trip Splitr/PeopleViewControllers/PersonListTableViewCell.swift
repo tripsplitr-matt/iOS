@@ -10,8 +10,7 @@ import UIKit
 
 class PersonListTableViewCell: UITableViewCell {
 
-    @IBAction func personSummaryButtonPressed(_ sender: Any) {
-    }
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

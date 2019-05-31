@@ -311,11 +311,6 @@
                                 <rect key="frame" x="117" y="508" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvR-sl-rhz">
-                                <rect key="frame" x="171" y="433" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Photo"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Picture URL Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbY-Wo-JkH">
                                 <rect key="frame" x="20" y="292" width="364" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,6 +318,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvR-sl-rhz">
+                                <rect key="frame" x="171" y="330" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButtonPressed:" destination="FTg-bW-Utc" eventType="touchUpInside" id="6Gb-af-9w8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -334,13 +337,13 @@
                     <navigationItem key="navigationItem" title="Add Photo" id="JN9-J5-6Wh">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="iAg-W1-1D6">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="FTg-bW-Utc" id="EkG-u4-MUM"/>
+                                <action selector="saveButtonPressed:" destination="FTg-bW-Utc" id="SwV-hd-X6s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addImgTextField" destination="UbY-Wo-JkH" id="XiN-h6-Dr6"/>
                         <outlet property="addedNameLabel" destination="d4e-gn-3cQ" id="58R-o6-lkn"/>
-                        <outlet property="selectPhotoButton" destination="OvR-sl-rhz" id="G4A-rF-Qen"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANY-xD-Kkd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -39,9 +39,11 @@ class PeopleSummaryTableViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonSummaryCell", for: indexPath) as! PersonSummaryTableViewCell
 
-            guard let user = user else { return cell}
+            guard let participant = participant else { return cell}
 
-            cell.nameLabel.text = user.name
+            cell.nameLabel.text = participant.name
+            cell.spentLabel.text = "$\(participant.spent)"
+            cell.usedLabel.text = "$\(participant.used)"
             style(cell: cell)
             return cell
         } else {
@@ -73,6 +75,6 @@ class PeopleSummaryTableViewController: UITableViewController {
 
 
 
-    var user: User?
+    var participant: Participant?
 
 }

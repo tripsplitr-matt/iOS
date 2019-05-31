@@ -25,9 +25,9 @@ struct Trip: Codable, Equatable {
 
 struct Participant: Codable, Equatable {
 
-    var id: Int
-    var users_id: Int
-    var trips_id: Int
-
+    var name: String
+    var img: String
+    var spent: Int
+    var used: Int
 
 }

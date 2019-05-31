@@ -37,12 +37,14 @@ class PeopleAddNameViewController: UIViewController {
         if segue.identifier == "AddPersonPhoto" {
             let destinationVC = segue.destination as? PeopleAddPhotoViewController
             destinationVC?.name = name
+            destinationVC?.participantController = participantController
         }
     }
 
     @IBOutlet weak var addNameTextField: UITextField!
     var name: String = " "
+    var participantController: ParticipantController?
     
     
-    
+
 }

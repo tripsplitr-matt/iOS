@@ -177,7 +177,7 @@ class TripsTableViewController: UITableViewController {
 //
 //    }
 
-
+    
     var tripController = TripController()
     var apiController = APIController()
     var tripNames: [TripName] = [] 

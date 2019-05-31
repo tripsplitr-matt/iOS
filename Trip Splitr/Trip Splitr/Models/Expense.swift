@@ -12,8 +12,8 @@ struct Expense: Codable, Equatable {
 
     var event: String
     var cost: Int
-    var paidBy: [User]
-    var usedBy: [User]
+    var paidBy: [Participant]
+    var usedBy: [Participant]
 
 
 }

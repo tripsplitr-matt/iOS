@@ -30,13 +30,14 @@ class PeopleTableViewController: UITableViewController {
 //
 //        }
 //
-//        tableView.reloadData()
+     tableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
+
 
     }
 
@@ -46,33 +47,30 @@ class PeopleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return people.count
+        return participantController.allParticipants.count
     }
-    
-    
-    private func style(cell: UITableViewCell) {
-        //        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
-        
-        cell.backgroundColor = AppearanceHelper.lightBlue
-    }
-    
-    private func setupViews() {
-        view.backgroundColor = AppearanceHelper.mediumBlue
-        tableView.backgroundColor = AppearanceHelper.mediumBlue
-        tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
-        
-    }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonListTableViewCell
-        let person = people[indexPath.row]
-        cell.personNameLabel?.text = person.name
-         style(cell: cell)
+        let person = participantController.allParticipants[indexPath.row]
+        cell.personNameLabel.text = person.name
+        style(cell: cell)
 
         return cell
     }
 
+    private func style(cell: UITableViewCell) {
+        //        cell.textLabel?.font = AppearanceHelper.typerighterFont(with: .caption1, pointSize: 30)
+
+        cell.backgroundColor = AppearanceHelper.lightBlue
+    }
+
+    private func setupViews() {
+        view.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.backgroundColor = AppearanceHelper.mediumBlue
+        tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
+
+    }
 
 
 
@@ -83,11 +81,14 @@ class PeopleTableViewController: UITableViewController {
         if segue.identifier == "PeopleSummary" {
             let destinationVC = segue.destination as! PeopleSummaryTableViewController
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            destinationVC.user = people[indexPath.row]
+            destinationVC.participant = participantController.allParticipants[indexPath.row]
+        } else if segue.identifier == "AddPeople" {
+            let destinationVC = segue.destination as! PeopleAddNameViewController
+            destinationVC.participantController = participantController
         }
 
     }
-
+    var participantController = ParticipantController()
     var apiController = APIController()
     var people: [User] = [] {
         didSet {

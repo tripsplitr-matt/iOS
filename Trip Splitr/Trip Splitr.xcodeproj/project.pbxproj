@@ -43,6 +43,7 @@
 		D140C95022A03D5E00954050 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C94F22A03D5E00954050 /* Expense.swift */; };
 		D140C95222A03DD800954050 /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95122A03DD800954050 /* ExpenseController.swift */; };
 		D140C95422A073BB00954050 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95322A073BB00954050 /* Register.swift */; };
+		D140C95622A0A99900954050 /* ParticipantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140C95522A0A99900954050 /* ParticipantController.swift */; };
 		D16E58A8229D9959005ED951 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A7229D9959005ED951 /* Trips.storyboard */; };
 		D16E58AA229D9973005ED951 /* People.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58A9229D9973005ED951 /* People.storyboard */; };
 		D16E58AC229D9986005ED951 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16E58AB229D9986005ED951 /* Transactions.storyboard */; };
@@ -89,6 +90,7 @@
 		D140C94F22A03D5E00954050 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		D140C95122A03DD800954050 /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
 		D140C95322A073BB00954050 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		D140C95522A0A99900954050 /* ParticipantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantController.swift; sourceTree = "<group>"; };
 		D16E58A7229D9959005ED951 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		D16E58A9229D9973005ED951 /* People.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = People.storyboard; sourceTree = "<group>"; };
 		D16E58AB229D9986005ED951 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				D101FFB1229EF57A00D3A5A8 /* APIController.swift */,
 				D140C95122A03DD800954050 /* ExpenseController.swift */,
 				D101FFB0229EF57A00D3A5A8 /* LoginViewController.swift */,
+				D140C95522A0A99900954050 /* ParticipantController.swift */,
 				4443745E22A05BC700998466 /* CollectionViewCells */,
 				4478668F229F1DD600FFA53E /* PeopleViewControllers */,
 				44DF75E3229EEC4900AC0FBC /* ExpensesViewControllers */,
@@ -311,6 +314,7 @@
 				4478668A229F1C6300FFA53E /* PeopleAddPhotoViewController.swift in Sources */,
 				44DF75E5229EEDB700AC0FBC /* TripExpenseEventViewController.swift in Sources */,
 				D101FFB5229EF5A300D3A5A8 /* Bearer.swift in Sources */,
+				D140C95622A0A99900954050 /* ParticipantController.swift in Sources */,
 				44DF75E0229EEC1300AC0FBC /* TripExpensePaidByViewController.swift in Sources */,
 				D131F4FB229DD62D00C58357 /* PastTripTableViewCell.swift in Sources */,
 				D140C95022A03D5E00954050 /* Expense.swift in Sources */,
