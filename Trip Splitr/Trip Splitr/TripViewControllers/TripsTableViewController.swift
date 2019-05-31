@@ -125,6 +125,7 @@ class TripsTableViewController: UITableViewController {
                     if let image = try? result.get() {
                         DispatchQueue.main.async {
                             cell.tripImageView.image = image
+                            
                         }
                     }
                 })

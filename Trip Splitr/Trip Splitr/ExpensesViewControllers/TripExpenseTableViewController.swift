@@ -52,8 +52,6 @@ class TripExpenseTableViewController: UITableViewController {
             guard let currentTrip = currentTrip,
                 let tripController = tripController,
                 let expenses = tripController.activeTrips[currentTrip].expenses else { return 1}
-
-
             return expenses.count
         }
     }
@@ -63,8 +61,8 @@ class TripExpenseTableViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionsTotalCell", for: indexPath) as! TransactionsTotalTableViewCell
             guard let tripController = tripController,
-                let currentTrip = currentTrip,
-                let expenses = tripController.activeTrips[currentTrip].expenses else { return cell}
+                let currentTrip = currentTrip
+                 else { return cell}
             let trip = tripController.activeTrips[currentTrip]
 
             guard let total = trip.baseCost else { return cell }
@@ -80,8 +78,17 @@ class TripExpenseTableViewController: UITableViewController {
             guard let tripController = tripController,
                 let currentTrip = currentTrip,
             let expenses = tripController.activeTrips[currentTrip].expenses else { return cell}
+            let usedBy = expenses[indexPath.row].usedBy
+            let paidByName = expenses[indexPath.row].paidBy.name
+
+            let usedByString = "\(paidByName) split with \(usedBy.count - 1) people"
 
 
+
+            cell.transactionNameLabel.text = expenses[indexPath.row].event
+            cell.peopleLabel.text = usedByString
+            cell.priceLabel.text = "\(expenses[indexPath.row].cost)"
+            
             return cell
 
         }
@@ -132,7 +139,7 @@ class TripExpenseTableViewController: UITableViewController {
     }
 
 
- 
+    
     var participantController: ParticipantController?
     var tripController: TripController?
     var currentTrip: Int?

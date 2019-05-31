@@ -11,16 +11,11 @@ import Foundation
 class TripController {
 
     func createTrip(name: String, date: String, img: String) {
-
         let newTrip = Trip(name: name, date: date, participants: [], baseCost: 0, img: img, expenses: [], paidBy: "",  complete: false)
-
         activeTrips.append(newTrip)
-
-
     }
 
     func createExpense(event: String, cost: Int, paidBy: Participant, usedBy: [Participant], currentTrip: Int) {
-
 
         let newExpense = Expense(event: event, cost: cost, paidBy: paidBy, usedBy: usedBy)
         activeTrips[currentTrip].expenses?.append(newExpense)
@@ -32,7 +27,6 @@ class TripController {
 
         guard let baseCost = activeTrips[currentTrip].baseCost else { return }
         let newBaseCost = baseCost + expense.cost
-
         activeTrips[currentTrip].baseCost = newBaseCost
     }
 
@@ -41,6 +35,10 @@ class TripController {
 
         let participant = Participant(name: name, img: img, spent: 0, used: 0)
         activeTrips[currentTrip].participants?.append(participant)
+    }
+
+    func updateParticipant(participant: Participant, currentTrip: Int){
+        
     }
 
 
