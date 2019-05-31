@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class PeopleTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,12 +33,14 @@ class PeopleTableViewController: UITableViewController {
 //        }
 //
      tableView.reloadData()
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
+
 
 
     }
@@ -88,11 +92,12 @@ class PeopleTableViewController: UITableViewController {
         }
 
     }
+
     var participantController = ParticipantController()
     var apiController = APIController()
     var people: [User] = [] {
         didSet {
-            
+
             DispatchQueue.main.async {
                   self.tableView.reloadData()
           

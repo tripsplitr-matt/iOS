@@ -211,7 +211,7 @@
                     <navigationItem key="navigationItem" title="Cost" id="Nhp-Nq-DZJ">
                         <barButtonItem key="rightBarButtonItem" title="Paid By" id="bVc-lW-Kso">
                             <connections>
-                                <segue destination="9EG-zI-744" kind="show" id="Fgx-UU-8iV"/>
+                                <segue destination="9EG-zI-744" kind="show" identifier="AddPaidBy" id="Fgx-UU-8iV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -304,18 +304,18 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Paid By" id="unI-Pa-m94">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="aNv-tX-o4z">
+                        <barButtonItem key="rightBarButtonItem" title="Used By" id="aNv-tX-o4z">
                             <connections>
-                                <segue destination="RV3-os-xnC" kind="show" id="COx-QU-k8I"/>
+                                <segue destination="RV3-os-xnC" kind="show" identifier="AddUsedBy" id="COx-QU-k8I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpL-bR-E5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255.072463768116" y="-513.61607142857144"/>
+            <point key="canvasLocation" x="2325" y="146"/>
         </scene>
-        <!--Used By Collection View Controller-->
+        <!--Used By-->
         <scene sceneID="h3b-jW-beV">
             <objects>
                 <collectionViewController id="RV3-os-xnC" customClass="UsedByCollectionViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
@@ -393,10 +393,17 @@
                             <outlet property="delegate" destination="RV3-os-xnC" id="svO-xl-dhB"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Used By" id="aIF-Nw-XhD">
+                        <barButtonItem key="rightBarButtonItem" title="Save Expense" id="AEq-vK-YQr">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="RV3-os-xnC" id="ifi-6X-vbm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqu-9h-TPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3129" y="-514"/>
+            <point key="canvasLocation" x="3199" y="145"/>
         </scene>
         <!--Paid By-->
         <scene sceneID="wfn-hb-MfF">
@@ -455,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ2-DV-B1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266.666666666667" y="142.63392857142856"/>
+            <point key="canvasLocation" x="2267" y="866"/>
         </scene>
         <!--Transactions-->
         <scene sceneID="eHB-Su-gOq">
@@ -546,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxM-Ix-smi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3128.985507246377" y="145.98214285714286"/>
+            <point key="canvasLocation" x="3129" y="869"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,4 @@ struct Expense: Codable, Equatable {
     var cost: Int
     var paidBy: [Participant]
     var usedBy: [Participant]
-
-
 }
