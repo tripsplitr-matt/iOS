@@ -289,7 +289,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Name" id="HSY-hf-b7H">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add Photo" id="usY-Rj-a91">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" id="usY-Rj-a91">
                             <connections>
                                 <segue destination="FTg-bW-Utc" kind="show" identifier="AddPersonPhoto" id="r9c-EK-OYV"/>
                             </connections>

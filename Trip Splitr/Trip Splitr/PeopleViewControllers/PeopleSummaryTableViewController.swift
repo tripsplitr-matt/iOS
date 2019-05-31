@@ -59,7 +59,7 @@ class PeopleSummaryTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonExpenseCell", for: indexPath) as! PersonExpenseTableViewCell
 
-            if tripController?.activeTrips[currentTrip] 
+//            if tripController?.activeTrips[currentTrip] 
 
 
             return cell

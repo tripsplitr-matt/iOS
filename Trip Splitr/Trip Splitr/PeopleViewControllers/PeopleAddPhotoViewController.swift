@@ -26,6 +26,7 @@ class PeopleAddPhotoViewController: UIViewController {
         print(img)
         self.view.endEditing(true)
         tripController?.createParticipant(name: name, img: img, currentTrip: currentTrip )
+        addImgTextField.text = ""
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {

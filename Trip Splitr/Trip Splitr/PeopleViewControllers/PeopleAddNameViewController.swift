@@ -14,6 +14,7 @@ class PeopleAddNameViewController: UIViewController {
         self.view.endEditing(true)
         name = addNameTextField.text ?? ""
         addPhotoButton.isEnabled = true
+        performSegue(withIdentifier: "AddPersonPhoto", sender: sender)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

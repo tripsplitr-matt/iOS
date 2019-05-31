@@ -31,6 +31,7 @@ class TripExpenseCostViewController: UIViewController {
         guard let text = tripCostTextField.text else { return }
         cost = Int(text) ?? 0
         self.view.endEditing(true)
+        performSegue(withIdentifier: "AddPaidBy", sender: sender)
     }
 
 

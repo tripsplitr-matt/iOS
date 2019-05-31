@@ -67,7 +67,7 @@ class TripExpenseTableViewController: UITableViewController {
 
             guard let total = trip.baseCost else { return cell }
 
-
+            style(cell: cell)
 
             cell.tripTotalLabel.text = "$\(total)"
 
@@ -93,7 +93,7 @@ class TripExpenseTableViewController: UITableViewController {
             cell.peopleLabel.text = usedByString
             cell.priceLabel.text = "$\(expenses[indexPath.row].cost)"
             cell.priceLabel.textColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)
-            
+            style(cell: cell)
             return cell
 
         }

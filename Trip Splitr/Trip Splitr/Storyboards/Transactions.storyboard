@@ -303,7 +303,6 @@
         <!--Paid By-->
         <scene sceneID="gJa-Yp-CfW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dpL-bR-E5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="9EG-zI-744" customClass="PaidByCollectionViewController" customModule="Trip_Splitr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8c7-HI-7aR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -454,13 +453,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Paid By" id="unI-Pa-m94">
-                        <barButtonItem key="rightBarButtonItem" title="Used By" id="aNv-tX-o4z">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="aNv-tX-o4z">
                             <connections>
                                 <segue destination="RV3-os-xnC" kind="show" identifier="AddUsedBy" id="COx-QU-k8I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpL-bR-E5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2318.840579710145" y="142.63392857142856"/>
         </scene>
@@ -630,7 +630,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Used By" id="aIF-Nw-XhD">
-                        <barButtonItem key="rightBarButtonItem" title="Confirm Expense" id="AEq-vK-YQr">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="AEq-vK-YQr">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="RV3-os-xnC" id="ifi-6X-vbm"/>
                                 <segue destination="tp9-RE-DeI" kind="show" identifier="ConfirmExpense" id="wrE-7K-eRx"/>

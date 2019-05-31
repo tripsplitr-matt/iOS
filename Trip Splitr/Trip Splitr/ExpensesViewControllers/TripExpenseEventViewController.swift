@@ -30,11 +30,11 @@ class TripExpenseEventViewController: UIViewController {
     }
 
     @IBAction func addButtonPressed(_ sender: Any) {
-
+       
         guard let text = tripEventTextField.text else { return }
         event = text
         self.view.endEditing(true)
-
+        performSegue(withIdentifier: "AddCost", sender: sender)
     }
     // MARK: - Navigation
 
