@@ -1,5 +1,5 @@
 //
-//  ExpenseController.swift
+//  Register.swift
 //  Trip Splitr
 //
 //  Created by Jonathan Ferrer on 5/30/19.
@@ -8,11 +8,12 @@
 
 import Foundation
 
+struct Register: Codable {
 
-class ExpenseController {
-
-    
-
+    let name: String
+    let username: String
+    let password: String
+    let email: String
 
 
 }

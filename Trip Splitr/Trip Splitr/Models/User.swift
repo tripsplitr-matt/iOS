@@ -18,5 +18,7 @@ struct User: Codable, Equatable {
 //     var spent: Int?
 //     var recieved: Int?
     //var avatar: String
+
+
     
 }

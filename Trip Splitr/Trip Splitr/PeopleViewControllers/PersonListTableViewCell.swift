@@ -10,8 +10,7 @@ import UIKit
 
 class PersonListTableViewCell: UITableViewCell {
 
-    @IBAction func personSummaryButtonPressed(_ sender: Any) {
-    }
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,6 +30,7 @@ class PersonListTableViewCell: UITableViewCell {
     }
 
     @IBOutlet weak var personNameLabel: UILabel!
-    @IBOutlet weak var personImageView: UIView!
-   
+    
+    @IBOutlet weak var personImageView: UIImageView!
+
 }

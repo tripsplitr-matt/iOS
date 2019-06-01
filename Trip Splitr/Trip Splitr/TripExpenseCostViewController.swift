@@ -14,6 +14,12 @@ class TripExpenseCostViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
 
+        guard let currentTrip = currentTrip,
+            let tripController = tripController else { return }
+        print("in addcost currentTrip \(currentTrip)")
+        print(tripController.activeTrips[currentTrip])
+
+
         // Do any additional setup after loading the view.
     }
     private func setupViews() {
@@ -25,6 +31,7 @@ class TripExpenseCostViewController: UIViewController {
         guard let text = tripCostTextField.text else { return }
         cost = Int(text) ?? 0
         self.view.endEditing(true)
+        performSegue(withIdentifier: "AddPaidBy", sender: sender)
     }
 
 
@@ -33,9 +40,12 @@ class TripExpenseCostViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPaidBy" {
-            let destinationVC = segue.destination as? TripExpensePaidByViewController
+            let destinationVC = segue.destination as? PaidByCollectionViewController
             destinationVC?.cost = cost
             destinationVC?.event = event
+            destinationVC?.participantController = participantController
+            destinationVC?.tripController = tripController
+            destinationVC?.currentTrip = currentTrip
 
 
         }
@@ -44,6 +54,9 @@ class TripExpenseCostViewController: UIViewController {
 
     var cost: Int = 0
     var event: String?
+    var participantController: ParticipantController?
+    var tripController: TripController?
+    var currentTrip: Int?
     @IBOutlet weak var tripCostTextField: UITextField!
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var enterCostLabel: UILabel!

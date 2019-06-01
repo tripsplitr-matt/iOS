@@ -21,7 +21,8 @@ class PastTripTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBOutlet weak var tripImageView: UIView!
+    @IBOutlet weak var tripImageView: UIImageView!
+    
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 }

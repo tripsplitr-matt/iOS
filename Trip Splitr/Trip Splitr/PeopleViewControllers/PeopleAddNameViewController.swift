@@ -10,6 +10,12 @@ import UIKit
 
 class PeopleAddNameViewController: UIViewController {
 
+    @IBAction func addButtonPressed(_ sender: Any) {
+        self.view.endEditing(true)
+        name = addNameTextField.text ?? ""
+        addPhotoButton.isEnabled = true
+        performSegue(withIdentifier: "AddPersonPhoto", sender: sender)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -25,17 +31,27 @@ class PeopleAddNameViewController: UIViewController {
     }
     
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddPersonPhoto" {
+            let destinationVC = segue.destination as? PeopleAddPhotoViewController
+            destinationVC?.name = name
+            destinationVC?.participantController = participantController
+            destinationVC?.currentTrip = currentTrip
+            destinationVC?.tripController = tripController
+        }
     }
-    */
+
+    @IBOutlet weak var addPhotoButton: UIBarButtonItem!
     @IBOutlet weak var addNameTextField: UITextField!
+    var name: String = " "
+    var participantController: ParticipantController?
+    var tripController: TripController?
+    var currentTrip: Int?
     
     
-    
+
 }

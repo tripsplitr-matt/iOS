@@ -27,6 +27,9 @@ class ActiveTripTableViewCell: UITableViewCell {
        
         // Configure the view for the selected state
     }
+
+    @IBOutlet weak var editTripButton: UIButton!
+    
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

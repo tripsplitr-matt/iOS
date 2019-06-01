@@ -8,27 +8,36 @@
 
 import UIKit
 
+
+
 class TripsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+
 //            if apiController.bearer == nil {
 //                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
 //            }
+//        apiController.getTrip(tripID: 1) { (result) in
+//            do {
+//                let trip = try result.get()
+//                print(trip)
+//
+//        } catch {
+//            print("no")
+//        }
+//        }
 
 
+        tableView.reloadData()
     }
 
-    func convertTrips() {
-
-        for trip in tripNames {
-            let name = trip.name
-            let date = trip.date
-            tripController.createTrip(name: name, date: date)
-        }
-
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        guard let currentTrip = currentTrip else { return }
+        tabBar.currentTrip = currentTrip
     }
 
 
@@ -36,26 +45,45 @@ class TripsTableViewController: UITableViewController {
         super.viewDidAppear(true)
 
         apiController.getTrips { (result) in
-
             do {
                 self.tripNames = try result.get()
-
                 DispatchQueue.main.async {
-
                     self.tableView.reloadData()
                     print(self.tripNames)
                 }
-
             } catch {
                 NSLog("Error getting all trips")
             }
-
-
         }
-        convertTrips()
-        print(tripController.allTrips)
+
+
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+        tripController = tabBar.tripController
+        currentTrip = tabBar.currentTrip
+        guard let currentTrip = currentTrip else { return }
+        print(currentTrip)
         setupAppearances()
         tableView.reloadData()
+    }
+
+
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if indexPath.section == 0 {
+        let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
+        cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        currentTrip = indexPath.row
+        }
+        print(currentTrip)
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        if indexPath.section == 0 {
+            let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
+            cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        }
     }
 
     // MARK: - Table view data source
@@ -70,8 +98,10 @@ class TripsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
+            guard let tripController = tripController else { return 1 }
             return tripController.activeTrips.count
         } else {
+            guard let tripController = tripController else { return  1}
             return tripController.pastTrips.count
         }
     }
@@ -80,23 +110,46 @@ class TripsTableViewController: UITableViewController {
 
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveTripCell", for: indexPath) as! ActiveTripTableViewCell
-            let trip = tripController.activeTrips[indexPath.row]
+            guard let tripController = tripController else { return cell}
+             let trip = tripController.activeTrips[indexPath.row]
+            guard let img = trip.img else { return cell }
 
-            if trip.past == false {
+
+            if trip.complete == false {
                 cell.tripNameLabel.text = trip.name
-                cell.numberOfPeopleLabel.text = "\(trip.users!.count) people"
+                cell.numberOfPeopleLabel.text = "\(trip.participants!.count) people"
                 cell.dateLabel.text = trip.date
-                cell.costLabel.text = "\(trip.cost ?? 0)"
+                cell.costLabel.text = "$\(trip.baseCost ?? 0)"
+
+                apiController.fetchImage(at: img, completion: { result in
+                    if let image = try? result.get() {
+                        DispatchQueue.main.async {
+                            cell.tripImageView.image = image
+                            
+                        }
+                    }
+                })
+
                 style(cell: cell)
             }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PastTripCell", for: indexPath) as! PastTripTableViewCell
+            guard let tripController = tripController else { return cell}
             let trip = tripController.pastTrips[indexPath.row]
-
-            if trip.past == true {
+            guard let img = trip.img else { return cell }
+            if trip.complete == true {
                 cell.dateLabel.text = trip.date
                 cell.tripNameLabel.text = trip.name
+
+                apiController.fetchImage(at: img, completion: { result in
+                    if let image = try? result.get() {
+                        DispatchQueue.main.async {
+                            cell.tripImageView.image = image
+                        }
+                    }
+                })
+
                 style(cell: cell)
             }
             return cell
@@ -117,10 +170,6 @@ class TripsTableViewController: UITableViewController {
         tableView.tableHeaderView?.backgroundColor = AppearanceHelper.mediumBlue
 
     }
-
-
-
-
 
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -154,6 +203,7 @@ class TripsTableViewController: UITableViewController {
             let destinationVC = segue.destination as? TripDetailViewController
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             destinationVC?.tripController = tripController
+            guard let tripController = tripController else { return }
             destinationVC?.trip = tripController.activeTrips[indexPath.row]
         } else if segue.identifier == "LoginViewModalSegue" {
             let destinationVC = segue.destination as? LoginViewController
@@ -163,9 +213,34 @@ class TripsTableViewController: UITableViewController {
 
     }
 
+//    func sortTrips() {
+//
+//        let tripCount = tripNames.count
+//
+//        for tripID in 1...tripCount {
+//            var trip: Trip?
+//            apiController.getTrip(tripID: tripID) { (result) in
+//                do {
+//                    trip = try result.get()
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                        print(trip!)
+//                    }
+//                } catch {
+//                    NSLog("Error getting all trips")
+//                }
+//            }
+//
+//
+//
+//        }
+//
+//
+//    }
 
-    var tripController = TripController()
+    var currentTrip: Int?
+    var tripController: TripController?
     var apiController = APIController()
-    var tripNames: [TripName] = []
+    var tripNames: [TripName] = [] 
 
 }
