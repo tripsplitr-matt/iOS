@@ -15,18 +15,9 @@ class TripsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//            if apiController.bearer == nil {
-//                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
-//            }
-//        apiController.getTrip(tripID: 1) { (result) in
-//            do {
-//                let trip = try result.get()
-//                print(trip)
-//
-//        } catch {
-//            print("no")
-//        }
-//        }
+            if apiController.bearer == nil {
+                performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+        }
 
 
         tableView.reloadData()
@@ -60,10 +51,18 @@ class TripsTableViewController: UITableViewController {
         let tabBar = tabBarController as! TripSplitrTabBarViewController
         tripController = tabBar.tripController
         currentTrip = tabBar.currentTrip
-        guard let currentTrip = currentTrip else { return }
+        guard let currentTrip = currentTrip,
+            let tripController = tripController
+            else { return }
         print(currentTrip)
         setupAppearances()
         tableView.reloadData()
+
+        if tripController.activeTrips.count > 0 {
+            tabBar.tabBar.isHidden = false
+        }
+        self.currentTrip = 0
+
     }
 
 
@@ -73,9 +72,9 @@ class TripsTableViewController: UITableViewController {
         if indexPath.section == 0 {
         let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
         cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+        //cell.endTripButton.isHidden = !cell.endTripButton.isHidden
         currentTrip = indexPath.row
         }
-        print(currentTrip)
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -83,11 +82,34 @@ class TripsTableViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.cellForRow(at: indexPath) as! ActiveTripTableViewCell
             cell.editTripButton.isHidden = !cell.editTripButton.isHidden
+//            cell.endTripButton.isHidden = !cell.endTripButton.isHidden
         }
     }
 
     // MARK: - Table view data source
 
+    @IBAction func endTripButtonPressed(_ sender: Any) {
+
+        guard let currentTrip = currentTrip,
+            let trips = tripController?.activeTrips else { return }
+
+        let trip = trips[currentTrip]
+
+        tripController?.toggleComplete(trip: trip)
+
+        let tabBar = tabBarController as! TripSplitrTabBarViewController
+
+        self.currentTrip = 0
+
+        tableView.reloadData()
+
+        if tripController?.activeTrips.count == 0 {
+            tabBar.tabBar.isHidden = true
+        }
+
+
+
+    }
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -100,11 +122,13 @@ class TripsTableViewController: UITableViewController {
         if section == 0 {
             guard let tripController = tripController else { return 1 }
             return tripController.activeTrips.count
-        } else {
+        }
+        if section == 1 {
             guard let tripController = tripController else { return  1}
             return tripController.pastTrips.count
         }
-    }
+        return 1
+        }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 

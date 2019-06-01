@@ -82,6 +82,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var tripNameTextField: UITextField!
     var tripController: TripController?
     var trip: Trip?
+    var apiController = APIController()
 
     
    

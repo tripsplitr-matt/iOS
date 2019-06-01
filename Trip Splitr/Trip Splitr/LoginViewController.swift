@@ -61,34 +61,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case .signUp:
             print("signUp")
 
-            apiController?.register(with: name, username: username, password: password, email: email, completion: { (error) in
-                if let error = error {
-                    NSLog("Error signing up: \(error)")
-                } else {
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in.", preferredStyle: .alert)
-                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(alertAction)
-                        self.present(alertController, animated: true, completion: {
-                            
-                        })
-                    }
-                }
-            })
+            let register = Register(name: name, username: username, password: password, email: email)
+
+            apiController?.users.append(register)
+
+            print(apiController?.users)
+
+//            apiController?.register(with: name, username: username, password: password, email: email, completion: { (error) in
+//                if let error = error {
+//                    NSLog("Error signing up: \(error)")
+//                } else {
+//                    DispatchQueue.main.async {
+//                        let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in.", preferredStyle: .alert)
+//                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                        alertController.addAction(alertAction)
+//                        self.present(alertController, animated: true, completion: {
+//
+//                        })
+//                    }
+//                }
+//            })
 
 
         case .logIn:
             print("Login")
 
-            apiController?.logIn(with: username, password: password, completion: { (error) in
-                if let error = error {
-                    NSLog("Error loggin in: \(error)")
-                } else {
-                    DispatchQueue.main.async {
-                        self.dismiss(animated: true, completion: nil)
-                    }
+            guard let users = apiController?.users else { return }
+
+            for user in users {
+
+                if usernameTextField.text == user.username && passwordTextField.text == user.password {
+                    self.dismiss(animated: true, completion: nil)
                 }
-            })
+
+            }
+
+//            apiController?.logIn(with: username, password: password, completion: { (error) in
+//                if let error = error {
+//                    NSLog("Error loggin in: \(error)")
+//                } else {
+//                    DispatchQueue.main.async {
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
+//                }
+//            })
 
         }
     }

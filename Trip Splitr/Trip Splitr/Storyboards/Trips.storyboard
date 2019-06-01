@@ -45,7 +45,7 @@
                                                     <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="✕  END TRIP"/>
                                                     <connections>
-                                                        <action selector="endTripButtonPressed:" destination="oRg-j3-vEu" eventType="touchUpInside" id="U5r-57-BfB"/>
+                                                        <action selector="endTripButtonPressed:" destination="w8N-rL-LzH" eventType="touchUpInside" id="WoD-Zc-YTg"/>
                                                     </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-ab-rAa">
