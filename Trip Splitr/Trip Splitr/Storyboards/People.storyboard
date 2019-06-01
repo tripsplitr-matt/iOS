@@ -358,17 +358,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WWn-Wz-xUZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Photo" id="JN9-J5-6Wh">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="iAg-W1-1D6">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="FTg-bW-Utc" id="SwV-hd-X6s"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Photo" id="JN9-J5-6Wh"/>
                     <connections>
                         <outlet property="addImgTextField" destination="UbY-Wo-JkH" id="XiN-h6-Dr6"/>
                         <outlet property="addedNameLabel" destination="d4e-gn-3cQ" id="58R-o6-lkn"/>
-                        <outlet property="saveButton" destination="iAg-W1-1D6" id="RGv-mJ-w3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANY-xD-Kkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -379,7 +372,7 @@
         <scene sceneID="xvN-ql-QjP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ng1-JP-wUg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" id="pq2-rT-IiJ"/>
+                    <tabBarItem key="tabBarItem" title="People" image="businessman" selectedImage="businessman" id="pq2-rT-IiJ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AKK-Nq-Odh">
@@ -396,4 +389,7 @@
             <point key="canvasLocation" x="-178.2608695652174" y="18.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="businessman" width="30" height="30"/>
+    </resources>
 </document>

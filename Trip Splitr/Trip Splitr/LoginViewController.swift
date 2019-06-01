@@ -65,7 +65,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
             apiController?.users.append(register)
 
-            print(apiController?.users)
 
 //            apiController?.register(with: name, username: username, password: password, email: email, completion: { (error) in
 //                if let error = error {
@@ -107,6 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //            })
 
         }
+        self.view.endEditing(true)
     }
 
 
