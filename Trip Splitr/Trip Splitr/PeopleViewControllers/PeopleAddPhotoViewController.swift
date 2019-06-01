@@ -22,18 +22,15 @@ class PeopleAddPhotoViewController: UIViewController {
             let name = name,
             let currentTrip = currentTrip else { return }
 
-        saveButton.isEnabled = true
+        
         print(img)
         self.view.endEditing(true)
         tripController?.createParticipant(name: name, img: img, currentTrip: currentTrip )
         addImgTextField.text = ""
-    }
-
-    @IBAction func saveButtonPressed(_ sender: Any) {
-
         navigationController?.popToRootViewController(animated: true)
 
     }
+
 
 
 

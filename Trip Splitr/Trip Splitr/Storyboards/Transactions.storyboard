@@ -822,7 +822,7 @@
         <scene sceneID="eHB-Su-gOq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLh-UQ-Sps" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transactions" id="Cp6-OI-vls"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="money" selectedImage="money" id="Cp6-OI-vls"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vvM-Ia-hr2">
@@ -910,4 +910,7 @@
             <point key="canvasLocation" x="3129" y="869"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="money" width="30" height="30"/>
+    </resources>
 </document>

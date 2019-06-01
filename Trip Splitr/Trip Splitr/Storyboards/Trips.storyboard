@@ -295,8 +295,9 @@
         <scene sceneID="UgS-om-SgY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LKF-vb-r7N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trips" id="eyz-gz-uD3"/>
+                    <tabBarItem key="tabBarItem" title="Trips" image="airplane_mode_on" selectedImage="airplane_mode_on" id="RL0-Wv-OeL"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oFc-qB-a1e">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -385,12 +386,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="evb-yZ-yBy">
+                                <rect key="frame" x="40" y="84" width="334" height="156"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="evb-yZ-yBy" secondAttribute="height" multiplier="167:78" id="AHB-Re-gTe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="evb-yZ-yBy" firstAttribute="leading" secondItem="Gv5-ja-3iA" secondAttribute="leading" constant="40" id="8F5-7z-MP4"/>
+                            <constraint firstItem="Gv5-ja-3iA" firstAttribute="trailing" secondItem="evb-yZ-yBy" secondAttribute="trailing" constant="40" id="F23-Bx-2br"/>
+                            <constraint firstItem="evb-yZ-yBy" firstAttribute="top" secondItem="Gv5-ja-3iA" secondAttribute="top" constant="40" id="fda-6i-ZTr"/>
                             <constraint firstItem="rh3-JW-u7s" firstAttribute="leading" secondItem="Gv5-ja-3iA" secondAttribute="leading" constant="40" id="hnZ-Gj-2d8"/>
                             <constraint firstItem="rh3-JW-u7s" firstAttribute="top" secondItem="Gv5-ja-3iA" secondAttribute="top" constant="225" id="ldd-zN-eih"/>
                             <constraint firstItem="Gv5-ja-3iA" firstAttribute="trailing" secondItem="rh3-JW-u7s" secondAttribute="trailing" constant="40" id="mOr-vE-7f9"/>
+                            <constraint firstItem="5cu-Dq-bRw" firstAttribute="top" secondItem="evb-yZ-yBy" secondAttribute="bottom" constant="29" id="zlc-HU-Zmc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gv5-ja-3iA"/>
                     </view>
@@ -405,9 +417,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQ9-hS-nuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629" y="-490"/>
+            <point key="canvasLocation" x="1628.985507246377" y="-490.17857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="310" height="252"/>
+        <image name="airplane_mode_on" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W98-1R-UrY"/>
     </inferredMetricsTieBreakers>
