@@ -63,21 +63,35 @@ class TripController {
 
         let personIndex = activeTrips[currentTrip].participants?.firstIndex(of: paidBy)
         activeTrips[currentTrip].participants?[personIndex ?? 0].spent += expense.cost
-        
-        
-        
+
+    }
+    
+    func toggleComplete(trip: Trip) {
+
+        guard let indexPath = activeTrips.firstIndex(of: trip) else { return }
+        activeTrips[indexPath].complete = true
+        filterActiveTrips()
+    }
+
+    func filterActiveTrips() {
+        for trip in activeTrips {
+            if trip.complete == true {
+                guard let indexPath = activeTrips.firstIndex(of: trip) else { return }
+                pastTrips.append(trip)
+                activeTrips.remove(at: indexPath)
+            }
+        }
     }
     
     
-    
-    
-    
-    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 0, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: true),Trip(name: "Iceland", date: "5/1/19", participants: [Participant(name: "Someone", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0),Participant(name: "Jon", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0), Participant(name: "Ryan", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0)], baseCost: 0, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: false)]
+    var allTrips: [Trip] = [Trip(name: "Germany", date: "10/16/18", participants: [], baseCost: 0, img: "https://www.topuniversities.com/sites/default/files/articles/lead-images/germany-view.jpg", expenses: [], paidBy: "", complete: false),Trip(name: "Iceland", date: "5/1/19", participants: [Participant(name: "Someone", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0),Participant(name: "Jon", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0), Participant(name: "Ryan", img: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", spent: 0, used: 0)], baseCost: 0, img: "https://www.telegraph.co.uk/content/dam/Travel/2019/March/Kirkjufell-iStock-959966730.jpg?imwidth=1400", expenses: [], paidBy: "", complete: false)]
     
     var activeTrips: [Trip] = []
-    
+   var pastTrips: [Trip] = []
+
     init() {
         activeTrips = liveTrips
+        pastTrips = deadTrips
     }
     
     var liveTrips: [Trip] {
@@ -92,7 +106,7 @@ class TripController {
     
     
     
-    var pastTrips: [Trip] {
+    var deadTrips: [Trip] {
         var trips: [Trip] = []
         for trip in allTrips {
             if trip.complete == true {

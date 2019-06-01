@@ -219,7 +219,7 @@ class APIController {
 
 
     func fetchImage(at urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
-        let imageUrl = URL(string: urlString)!
+        guard let imageUrl = URL(string: urlString) else { return }
 
         var request = URLRequest(url: imageUrl)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -294,6 +294,7 @@ class APIController {
     
     
     // Properties
+    var users: [Register] = []
     var bearer: Bearer?
     private let baseURL = URL(string: "https://tripsplitr.herokuapp.com/")!
 

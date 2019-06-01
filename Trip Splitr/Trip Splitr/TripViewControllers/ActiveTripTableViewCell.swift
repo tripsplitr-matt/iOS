@@ -10,8 +10,6 @@ import UIKit
 
 class ActiveTripTableViewCell: UITableViewCell {
 
-    @IBAction func endTripButtonPressed(_ sender: Any) {
-    }
 
     
 

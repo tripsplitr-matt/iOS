@@ -11,15 +11,6 @@ import UIKit
 class TripExpenseTableViewController: UITableViewController {
 
 
-    @IBAction func endTripButtonPressed(_ sender: Any) {
-        
-        guard let currentTrip = currentTrip,
-            let trips = tripController?.activeTrips else { return }
-        
-        var trip = trips[currentTrip]
-        trip.complete = true
-    }
-    
         
         
         
