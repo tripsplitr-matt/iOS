@@ -33,18 +33,6 @@
                                                 <constraint firstAttribute="width" secondItem="9y5-bg-uRs" secondAttribute="height" multiplier="46:11" id="11b-ac-hft"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZd-do-E3A">
-                                            <rect key="frame" x="20" y="55" width="374" height="30"/>
-                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="tZd-do-E3A" secondAttribute="height" multiplier="187:15" id="bcN-LD-BhM"/>
-                                            </constraints>
-                                            <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="✕  END TRIP"/>
-                                            <connections>
-                                                <action selector="endTripButtonPressed:" destination="yjY-yz-QuA" eventType="primaryActionTriggered" id="LRk-5g-KdC"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,088.43 spent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-pl-q4u">
                                             <rect key="frame" x="20" y="11" width="374" height="36"/>
                                             <constraints>
@@ -56,12 +44,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tZd-do-E3A" firstAttribute="top" secondItem="7xB-pl-q4u" secondAttribute="bottom" constant="8" id="FM9-uW-284"/>
-                                        <constraint firstItem="tZd-do-E3A" firstAttribute="leading" secondItem="csO-oM-FTK" secondAttribute="leadingMargin" id="MaN-hW-Mq4"/>
                                         <constraint firstItem="9y5-bg-uRs" firstAttribute="centerX" secondItem="7xB-pl-q4u" secondAttribute="centerX" id="PQ4-lM-EPU"/>
                                         <constraint firstItem="9y5-bg-uRs" firstAttribute="leading" secondItem="csO-oM-FTK" secondAttribute="leading" id="Yb9-eH-kkY"/>
                                         <constraint firstAttribute="bottom" secondItem="9y5-bg-uRs" secondAttribute="bottom" constant="8.5" id="YwS-Xm-w2W"/>
-                                        <constraint firstItem="tZd-do-E3A" firstAttribute="top" secondItem="7xB-pl-q4u" secondAttribute="bottom" constant="8" id="ZS4-lE-SPD"/>
                                         <constraint firstItem="7xB-pl-q4u" firstAttribute="top" secondItem="csO-oM-FTK" secondAttribute="topMargin" id="b0x-wT-FEt"/>
                                         <constraint firstItem="9y5-bg-uRs" firstAttribute="top" secondItem="csO-oM-FTK" secondAttribute="top" id="dsD-Xz-YCe"/>
                                         <constraint firstItem="7xB-pl-q4u" firstAttribute="leading" secondItem="csO-oM-FTK" secondAttribute="leadingMargin" id="q4u-VT-UF1"/>
